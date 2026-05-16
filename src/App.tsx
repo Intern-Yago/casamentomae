@@ -17,7 +17,7 @@ const App: React.FC = () => {
   const [copySuccess, setCopySuccess] = useState(false);
 
   const calculateTimeLeft = useCallback(() => {
-    const weddingDate = new Date(WEDDING_DATA.date).getTime();
+    const weddingDate = new Date("2027-04-24T16:00:00").getTime();
     const now = new Date().getTime();
     const difference = weddingDate - now;
 
@@ -35,7 +35,7 @@ const App: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    AOS.init({ duration: 1000, once: true, offset: 100 });
+    AOS.init({ duration: 1000, once: true, offset: 0 });
     
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
@@ -73,7 +73,7 @@ const App: React.FC = () => {
       {/* Navigation */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-content">
-          <a href="#home" className="nav-logo">{WEDDING_DATA.names}</a>
+          <a href="#home" className="nav-logo">Pedro Henrique e Lidiane</a>
           
           <button 
             className="menu-toggle" 
@@ -88,6 +88,7 @@ const App: React.FC = () => {
             <a href="#home" onClick={closeMobileMenu}>Início</a>
             <a href="#historia" onClick={closeMobileMenu}>Nossa História</a>
             <a href="#dia" onClick={closeMobileMenu}>O Grande Dia</a>
+            <a href="#hospedagem" onClick={closeMobileMenu}>Hospedagem</a>
             <a href="#local" onClick={closeMobileMenu}>Localização</a>
             <a href="#presentes" onClick={closeMobileMenu}>Presentes</a>
             <a href="#rsvp" onClick={closeMobileMenu}>Confirmação</a>
@@ -105,43 +106,37 @@ const App: React.FC = () => {
         <div className="hero-overlay"></div>
         
         <div className="container">
-          <p className="hero-pretitle" data-aos="fade-down">Bem-vindos ao nosso grande dia</p>
-          <h1 data-aos="zoom-in" data-aos-delay="200" className="hero-title">{WEDDING_DATA.names}</h1>
+          <p className="hero-pretitle" data-aos="fade-down">Dois caminhos, uma história e um amor que escolheu permanecer.</p>
+          <h1 data-aos="zoom-in" data-aos-delay="100" className="hero-title">Pedro Henrique e Lidiane</h1>
           
-          <div className="hero-info" data-aos="fade-up" data-aos-delay="400">
-            <p className="details">{WEDDING_DATA.dateDisplay} • {WEDDING_DATA.timeDisplay}</p>
-            <p>{WEDDING_DATA.location.name}, {WEDDING_DATA.location.city}</p>
+          <div className="countdown-premium" data-aos="fade-up" data-aos-delay="200">
+            <div className="count-box">
+              <span className="count-number">{timeLeft.days}</span>
+              <span className="count-label">Dias</span>
+            </div>
+            <div className="count-box">
+              <span className="count-number">{timeLeft.hours}</span>
+              <span className="count-label">Horas</span>
+            </div>
+            <div className="count-box">
+              <span className="count-number">{timeLeft.minutes}</span>
+              <span className="count-label">Min</span>
+            </div>
+            <div className="count-box">
+              <span className="count-number">{timeLeft.seconds}</span>
+              <span className="count-label">Seg</span>
+            </div>
           </div>
 
-          <div className="hero-actions" data-aos="fade-up" data-aos-delay="600">
+          <div className="hero-info" data-aos="fade-up" data-aos-delay="300">
+            <p className="details">24 de Abril de 2027 • 16:00h</p>
+            <p>Chácara Só Evento, Planaltina - DF</p>
+          </div>
+
+          <div className="hero-actions" data-aos="fade-up" data-aos-delay="400">
             <a href="#rsvp" className="btn btn-primary"><Heart size={18} /> Confirmar Presença</a>
             <a href="#local" className="btn btn-white"><MapPin size={18} /> Ver Localização</a>
           </div>
-
-          {!timeLeft.finished ? (
-            <div className="countdown-premium" data-aos="fade-up" data-aos-delay="800">
-              <div className="count-box">
-                <span className="count-number">{timeLeft.days}</span>
-                <span className="count-label">Dias</span>
-              </div>
-              <div className="count-box">
-                <span className="count-number">{timeLeft.hours}</span>
-                <span className="count-label">Horas</span>
-              </div>
-              <div className="count-box">
-                <span className="count-number">{timeLeft.minutes}</span>
-                <span className="count-label">Min</span>
-              </div>
-              <div className="count-box">
-                <span className="count-number">{timeLeft.seconds}</span>
-                <span className="count-label">Seg</span>
-              </div>
-            </div>
-          ) : (
-            <div className="celebration-msg" data-aos="zoom-in">
-              <h2 style={{ color: 'white', fontFamily: 'var(--font-cursive)', fontSize: '3rem' }}>Chegou o grande dia!</h2>
-            </div>
-          )}
         </div>
       </section>
 
@@ -155,13 +150,14 @@ const App: React.FC = () => {
 
           <div className="story-grid">
             <div className="story-img-container" data-aos="fade-right">
-              <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=800&q=80" alt={WEDDING_DATA.names} className="story-img" />
+              <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=800&q=80" alt="Pedro Henrique e Lidiane" className="story-img" />
             </div>
             <div className="story-text" data-aos="fade-left">
-              <h3>Um encontro do destino...</h3>
-              <p>Era uma tarde de outono quando nossos olhares se cruzaram pela primeira vez. O que começou como uma simples amizade floresceu no amor mais puro que já conhecemos.</p>
-              <p>Ao longo desses anos, cada risada, cada desafio e cada viagem construíram a base do que somos hoje. Do primeiro café ao pedido de casamento sob o céu estrelado, nossa jornada tem sido repleta de cumplicidade.</p>
-              <p>Agora, estamos ansiosos para dar o próximo passo e celebrar o início de uma nova fase ao lado de cada um de vocês.</p>
+              <h3>Do primeiro beijo ao sim!</h3>
+              <p>Nossa história começou de forma especial no dia 10 de agosto de 2024, quando o primeiro beijo marcou o início de algo que sabíamos ser único.</p>
+              <p>Não demorou muito para percebermos que queríamos caminhar juntos, e no dia 24 de novembro de 2024, oficializamos nosso namoro.</p>
+              <p>O momento mais emocionante aconteceu em março de 2026, no Restaurante Verona. Em um cenário perfeito, com baú, alianças, luz de velas e o som romântico de um violino, dissemos o "sim" que nos trouxe até aqui.</p>
+              <p>Agora, estamos prontos para celebrar essa união com todos vocês!</p>
             </div>
           </div>
         </div>
@@ -179,7 +175,7 @@ const App: React.FC = () => {
             <div className="premium-card" data-aos="fade-up" data-aos-delay="100">
               <div className="card-icon"><Clock size={32} /></div>
               <h3>Cerimônia</h3>
-              <p>A cerimônia será realizada pontualmente às {WEDDING_DATA.timeDisplay}. Recomendamos chegar com 30 minutos de antecedência.</p>
+              <p>O convite é para as 16h e o início da cerimônia ao ar livre (no gramado) será por volta das 16h30.</p>
               <a href={WEDDING_DATA.location.googleCalendarUrl} target="_blank" rel="noreferrer" className="btn btn-outline full-width">
                 <Calendar size={18} /> Salvar na Agenda
               </a>
@@ -197,11 +193,42 @@ const App: React.FC = () => {
             <div className="premium-card" data-aos="fade-up" data-aos-delay="300">
               <div className="card-icon"><Shirt size={32} /></div>
               <h3>Dress Code</h3>
-              <p>O traje sugerido é <strong>Esporte Fino</strong>. Evite cores muito claras (branco/off-white) e verde oliva.</p>
+              <p>As madrinhas usarão verde; os padrinhos usarão terno claro com a gravata combinando com a cor do vestido da madrinha; o noivo estará de azul marinho.</p>
               <a href="https://pinterest.com" target="_blank" rel="noreferrer" className="btn btn-outline full-width">
                 <Smartphone size={18} /> Ver Inspirações
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Hospedagem & Camping */}
+      <section id="hospedagem" className="bg-blush-soft">
+        <div className="container">
+          <div className="section-header" data-aos="fade-up">
+            <p className="section-subtitle">Fiquem conosco</p>
+            <h2 className="section-title">Hospedagem & Camping</h2>
+          </div>
+          <div className="premium-card" style={{ maxWidth: '800px', margin: '0 auto' }} data-aos="fade-up">
+            <div className="card-icon"><Plane size={32} /></div>
+            <h3>Pernoite na Chácara</h3>
+            <p>Queremos aproveitar cada segundo com vocês! Para os aventureiros e aqueles que desejam estender a celebração, a chácara possui uma área gramada preparada para receber barracas. Sintam-se à vontade para trazer seu equipamento e dormir no local sob as estrelas.</p>
+            <p style={{ fontStyle: 'italic', fontSize: '0.85rem' }}>*Por favor, nos avise na confirmação de presença se pretende acampar.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Cortejo Especial */}
+      <section id="cortejo">
+        <div className="container">
+          <div className="section-header" data-aos="fade-up">
+            <p className="section-subtitle">Momentos de afeto</p>
+            <h2 className="section-title">Cortejo Especial</h2>
+          </div>
+          <div className="premium-card" style={{ maxWidth: '800px', margin: '0 auto', background: 'var(--cream)' }} data-aos="fade-up">
+            <div className="card-icon"><Heart size={32} /></div>
+            <h3>Uma Entrada Repleta de Amor</h3>
+            <p>Nossa cerimônia será marcada por significados. Teremos a honra de receber nossos pais, a doçura da nossa avó, a alegria dos nossos filhos e a companhia de 8 casais de padrinhos que fazem parte da nossa história. Cada passo no corredor será um reflexo do amor que nos rodeia.</p>
           </div>
         </div>
       </section>
@@ -384,8 +411,8 @@ const App: React.FC = () => {
       {/* Footer */}
       <footer>
         <div className="container">
-          <div className="footer-logo">{WEDDING_DATA.names}</div>
-          <p className="footer-info">{WEDDING_DATA.dateDisplay} • {WEDDING_DATA.location.city}</p>
+          <div className="footer-logo">Pedro Henrique e Lidiane</div>
+          <p className="footer-info">24 de Abril de 2027 • Planaltina - DF</p>
           
           <div className="social-links">
             <a href={WEDDING_DATA.links.instagram} target="_blank" rel="noreferrer" className="social-circle" aria-label="Instagram"><Camera size={20} /></a>

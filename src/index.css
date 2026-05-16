@@ -1,8 +1,8 @@
 :root {
-  --olive: #6f7d3a;
-  --olive-dark: #4f5d28;
-  --blush: #f4dada;
-  --blush-soft: #fff5f5;
+  --olive: #6B8E23;
+  --olive-dark: #436145;
+  --blush: #DCAE96;
+  --blush-soft: #FFF5F5;
   --cream: #fbf8f3;
   --text: #3f3a36;
   --muted: #746f69;
@@ -173,9 +173,10 @@ section {
 
 .nav-logo {
   font-family: var(--font-cursive);
-  font-size: 2rem;
+  font-size: 1.4rem;
   color: var(--white);
   transition: var(--transition);
+  white-space: nowrap;
 }
 
 .navbar.scrolled .nav-logo {
@@ -184,11 +185,11 @@ section {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 15px;
 }
 
 .nav-links a {
-  font-size: 0.75rem;
+  font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -268,7 +269,7 @@ section {
 
 /* Hero */
 .hero {
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -276,7 +277,15 @@ section {
   align-items: center;
   text-align: center;
   color: var(--white);
-  padding: 0 20px;
+  padding: 80px 20px 40px;
+}
+
+.hero .container {
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hero-video {
@@ -304,18 +313,20 @@ section {
   text-transform: uppercase;
   letter-spacing: 4px;
   margin-bottom: 10px;
+  margin-top: 20px;
 }
 
 .hero h1 {
   font-family: var(--font-cursive);
-  font-size: clamp(4rem, 10vw, 8rem);
+  font-size: clamp(3rem, 8vw, 6rem);
   color: var(--white);
-  margin-bottom: 20px;
-  line-height: 1;
+  margin-bottom: 10px;
+  line-height: 140px;
 }
 
 .hero-info {
   font-size: 1.1rem;
+  margin-top: 25px;
   margin-bottom: 40px;
   font-weight: 300;
   max-width: 700px;
