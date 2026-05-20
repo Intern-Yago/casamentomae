@@ -76,7 +76,7 @@ const DigitalAlbum: React.FC = () => {
 
       // 1. Upload to Supabase Storage
       const { error: uploadError } = await supabase.storage
-        .from('photos')
+        .from('fotos')
         .upload(filePath, file);
 
       if (uploadError) {
@@ -86,7 +86,7 @@ const DigitalAlbum: React.FC = () => {
 
       // 2. Get Public URL
       const { data: { publicUrl } } = supabase.storage
-        .from('photos')
+        .from('fotos')
         .getPublicUrl(filePath);
 
       // 3. Save to Database
