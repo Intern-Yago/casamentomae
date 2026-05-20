@@ -19,6 +19,13 @@ const DigitalAlbum: React.FC = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    // Garantir que AOS não oculte a div se não for inicializado
+    const elements = document.querySelectorAll('[data-aos]');
+    elements.forEach(el => {
+      (el as HTMLElement).style.opacity = '1';
+      (el as HTMLElement).style.transform = 'none';
+    });
+
     if (view === 'gallery') {
       fetchPhotos();
       setJustUploaded(false);
@@ -105,18 +112,18 @@ const DigitalAlbum: React.FC = () => {
   };
 
   return (
-    <section id="album-digital" className="bg-cream">
+    <section id="album-digital" className="bg-cream" style={{ display: 'block', opacity: 1, visibility: 'visible' }}>
       <div className="container">
-        <div className="section-header" data-aos="fade-up">
+        <div className="section-header">
           <p className="section-subtitle">Compartilhe seus momentos</p>
           <h2 className="section-title">Álbum Digital</h2>
         </div>
 
-        <div className="premium-card" style={{ maxWidth: '800px', margin: '0 auto', minHeight: '400px' }} data-aos="fade-up">
+        <div className="premium-card" style={{ maxWidth: '800px', margin: '0 auto', minHeight: '400px', display: 'flex', opacity: 1, visibility: 'visible' }}>
           {view === 'upload' ? (
-            <div className="upload-view w-full">
+            <div className="upload-view" style={{ width: '100%', display: 'block' }}>
               {justUploaded ? (
-                <div className="text-center mb-8" style={{ padding: '20px' }}>
+                <div className="text-center mb-8" style={{ padding: '20px', width: '100%' }}>
                   <div className="card-icon" style={{ margin: '0 auto 20px', backgroundColor: 'var(--olive)', color: 'white' }}>
                     <CheckCircle size={32} />
                   </div>
@@ -143,7 +150,7 @@ const DigitalAlbum: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <>
+                <div style={{ width: '100%' }}>
                   <div className="text-center mb-8">
                     <p className="mb-4 text-muted">Ajude-nos a eternizar esse dia! Faça o upload das fotos e vídeos que você tirou durante a festa.</p>
                     
@@ -267,7 +274,7 @@ const DigitalAlbum: React.FC = () => {
                       Ver Álbum
                     </button>
                   </div>
-                </>
+                </div>
               )}
             </div>
           ) : (
