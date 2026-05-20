@@ -1,15 +1,17 @@
 import React, { useEffect, useState, useCallback } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { 
   Menu, X, Calendar, MapPin, Shirt, Gift, Plane, 
   Smartphone, Camera, Heart, CheckCircle,
-  ExternalLink, Navigation, Clock, Lock, Copy
+  ExternalLink, Navigation, Clock, Lock, Copy,
+  ArrowLeft
 } from 'lucide-react';
 import { WEDDING_DATA } from './constants/wedding';
 import DigitalAlbum from './components/DigitalAlbum';
 
-const App: React.FC = () => {
+const Home: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
@@ -57,7 +59,6 @@ const App: React.FC = () => {
 
   const handleRsvpSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulation of form submission
     setRsvpSubmitted(true);
   };
 
@@ -93,7 +94,6 @@ const App: React.FC = () => {
             <a href="#local" onClick={closeMobileMenu}>Localização</a>
             <a href="#presentes" onClick={closeMobileMenu}>Presentes</a>
             <a href="#rsvp" onClick={closeMobileMenu}>Confirmação</a>
-            <a href="#album-digital" onClick={closeMobileMenu}>Álbum Digital</a>
           </div>
         </div>
       </nav>
@@ -318,9 +318,6 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      {/* Álbum Digital */}
-      <DigitalAlbum />
-
       {/* Confirmação de Presença */}
       <section id="rsvp">
         <div className="container">
@@ -421,7 +418,7 @@ const App: React.FC = () => {
           
           <div className="social-links">
             <a href={WEDDING_DATA.links.instagram} target="_blank" rel="noreferrer" className="social-circle" aria-label="Instagram"><Camera size={20} /></a>
-            <a href="#" className="social-circle" aria-label="Facebook"><Heart size={20} /></a>
+            <a href="#" className="social-circle" aria-label="Heart"><Heart size={20} /></a>
             <a href={`https://wa.me/5511999999999`} target="_blank" rel="noreferrer" className="social-circle" aria-label="WhatsApp"><Smartphone size={20} /></a>
           </div>
 
@@ -432,6 +429,53 @@ const App: React.FC = () => {
         </div>
       </footer>
     </div>
+  );
+};
+
+const AlbumPage: React.FC = () => {
+  return (
+    <div className="wedding-app min-h-screen bg-cream">
+      <nav className="navbar scrolled">
+        <div className="container nav-content">
+          <Link to="/" className="nav-logo" style={{ color: 'var(--olive)' }}>Pedro Henrique e Lidiane</Link>
+          <Link to="/" className="btn btn-outline btn-sm" style={{ padding: '8px 20px', fontSize: '0.75rem' }}>
+            <ArrowLeft size={16} /> Voltar ao Site
+          </Link>
+        </div>
+      </nav>
+      <div style={{ paddingTop: '100px' }}>
+        <DigitalAlbum />
+      </div>
+      <footer style={{ marginTop: 'auto' }}>
+        <div className="container">
+          <div className="footer-logo" style={{ fontSize: '2.5rem' }}>Pedro Henrique e Lidiane</div>
+          <div className="copyright">
+            <p>&copy; 2026 • Todos os direitos reservados</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+const App: React.FC = () => {
+  return (
+    <Router>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/album" element={<AlbumPage />} />
+        {/* Redirecionar /album-digital antigo para o novo /album se necessário, ou apenas deixar as rotas assim */}
+      </Routes>
+    </Router>
   );
 };
 
