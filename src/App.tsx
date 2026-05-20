@@ -4,9 +4,11 @@ import 'aos/dist/aos.css';
 import { 
   Menu, X, Calendar, MapPin, Shirt, Gift, Plane, 
   Smartphone, Camera, Heart, CheckCircle,
-  ExternalLink, Navigation, Clock, Lock, Copy
+  ExternalLink, Navigation, Clock, Lock, Copy,
+  Image as ImageIcon
 } from 'lucide-react';
 import { WEDDING_DATA } from './constants/wedding';
+import DigitalAlbum from './components/DigitalAlbum';
 
 const App: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -92,6 +94,7 @@ const App: React.FC = () => {
             <a href="#local" onClick={closeMobileMenu}>Localização</a>
             <a href="#presentes" onClick={closeMobileMenu}>Presentes</a>
             <a href="#rsvp" onClick={closeMobileMenu}>Confirmação</a>
+            <a href="#album-digital" onClick={closeMobileMenu}>Álbum Digital</a>
           </div>
         </div>
       </nav>
@@ -315,6 +318,9 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Álbum Digital */}
+      <DigitalAlbum />
 
       {/* Confirmação de Presença */}
       <section id="rsvp">
