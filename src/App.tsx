@@ -4,8 +4,7 @@ import 'aos/dist/aos.css';
 import { 
   Menu, X, Calendar, MapPin, Shirt, Gift, Plane, 
   Smartphone, Camera, Heart, CheckCircle,
-  ExternalLink, Navigation, Clock, Lock, Copy,
-  Image as ImageIcon
+  ExternalLink, Navigation, Clock, Lock, Copy
 } from 'lucide-react';
 import { WEDDING_DATA } from './constants/wedding';
 import DigitalAlbum from './components/DigitalAlbum';
