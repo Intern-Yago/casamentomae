@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { 
-  Menu, X, Calendar, MapPin, Shirt, Gift, Plane, 
+  Menu, X, Calendar, MapPin, Gift, Plane, 
   Smartphone, Camera, Heart, CheckCircle,
   ExternalLink, Navigation, Clock, Lock, Copy,
   ArrowLeft

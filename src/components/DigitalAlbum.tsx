@@ -9,10 +9,6 @@ interface Photo {
   created_at: string;
 }
 
-interface RSVP {
-  name: string;
-}
-
 const DigitalAlbum: React.FC = () => {
   const [view, setView] = useState<'upload' | 'gallery'>('upload');
   const [uploading, setUploading] = useState(false);
