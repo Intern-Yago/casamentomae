@@ -75,7 +75,7 @@ const Home: React.FC = () => {
       {/* Navigation */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-content">
-          <a href="#home" className="nav-logo">Pedro Henrique e Lidiane</a>
+          <a href="#home" className="nav-logo">Lidiane e Pedro Henrique</a>
           
           <button 
             className="menu-toggle" 
@@ -100,16 +100,12 @@ const Home: React.FC = () => {
 
       {/* Hero */}
       <section className="hero" id="home">
-        <div className="hero-bg" style={{ 
-          position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', 
-          backgroundImage: 'url("https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80")',
-          backgroundSize: 'cover', backgroundPosition: 'center', zIndex: -2 
-        }}></div>
+        <div className="hero-bg-responsive"></div>
         <div className="hero-overlay"></div>
         
         <div className="container">
           <p className="hero-pretitle" data-aos="fade-down">Dois caminhos, uma história e um amor que escolheu permanecer.</p>
-          <h1 data-aos="zoom-in" data-aos-delay="100" className="hero-title">Pedro Henrique e Lidiane</h1>
+          <h1 data-aos="zoom-in" data-aos-delay="100" className="hero-title">Lidiane e Pedro Henrique</h1>
           
           <div className="countdown-premium" data-aos="fade-up" data-aos-delay="200">
             <div className="count-box">
@@ -152,7 +148,7 @@ const Home: React.FC = () => {
 
           <div className="story-grid">
             <div className="story-img-container" data-aos="fade-right">
-              <img src="https://images.unsplash.com/photo-1522673607200-1648832cee98?auto=format&fit=crop&w=800&q=80" alt="Pedro Henrique e Lidiane" className="story-img" />
+              <img src="/img_hist.jpeg" alt="Lidiane e Pedro Henrique" className="story-img" />
             </div>
             <div className="story-text" data-aos="fade-left">
               <h3>Do primeiro beijo ao sim!</h3>
@@ -160,6 +156,9 @@ const Home: React.FC = () => {
               <p>Não demorou muito para percebermos que queríamos caminhar juntos, e no dia 24 de novembro de 2024, oficializamos nosso namoro.</p>
               <p>O momento mais emocionante aconteceu em março de 2026, no Restaurante Verona. Em um cenário perfeito, com baú, alianças, luz de velas e o som romântico de um violino, dissemos o "sim" que nos trouxe até aqui.</p>
               <p>Agora, estamos prontos para celebrar essa união com todos vocês!</p>
+              <a href="#rsvp" className="btn btn-primary" style={{ marginTop: '20px' }}>
+                <Heart size={18} /> Quero Confirmar Presença
+              </a>
             </div>
           </div>
         </div>
@@ -178,27 +177,28 @@ const Home: React.FC = () => {
               <div className="card-icon"><Clock size={32} /></div>
               <h3>Cerimônia</h3>
               <p>O convite é para as 16h e o início da cerimônia ao ar livre (no gramado) será por volta das 16h30.</p>
-              <a href={WEDDING_DATA.location.googleCalendarUrl} target="_blank" rel="noreferrer" className="btn btn-outline full-width">
-                <Calendar size={18} /> Salvar na Agenda
-              </a>
+              <div className="card-actions">
+                <a href={WEDDING_DATA.location.googleCalendarUrl} target="_blank" rel="noreferrer" className="btn btn-outline full-width">
+                  <Calendar size={18} /> Salvar na Agenda
+                </a>
+                <a href="#rsvp" className="btn btn-primary full-width" style={{ marginTop: '10px' }}>
+                  <Heart size={18} /> Confirmar Presença
+                </a>
+              </div>
             </div>
 
             <div className="premium-card" data-aos="fade-up" data-aos-delay="200">
               <div className="card-icon"><Heart size={32} /></div>
               <h3>Recepção</h3>
               <p>Logo após a cerimônia, nos reuniremos no Salão Principal para um coquetel seguido de jantar e muita festa.</p>
-              <a href="#local" className="btn btn-outline full-width">
-                <MapPin size={18} /> Ver Localização
-              </a>
-            </div>
-
-            <div className="premium-card" data-aos="fade-up" data-aos-delay="300">
-              <div className="card-icon"><Shirt size={32} /></div>
-              <h3>Dress Code</h3>
-              <p>As madrinhas usarão verde; os padrinhos usarão terno claro com a gravata combinando com a cor do vestido da madrinha; o noivo estará de azul marinho.</p>
-              <a href="https://pinterest.com" target="_blank" rel="noreferrer" className="btn btn-outline full-width">
-                <Smartphone size={18} /> Ver Inspirações
-              </a>
+              <div className="card-actions">
+                <a href="#local" className="btn btn-outline full-width">
+                  <MapPin size={18} /> Ver Localização
+                </a>
+                <a href="#rsvp" className="btn btn-primary full-width" style={{ marginTop: '10px' }}>
+                  <Heart size={18} /> Confirmar Presença
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -215,7 +215,10 @@ const Home: React.FC = () => {
             <div className="card-icon"><Plane size={32} /></div>
             <h3>Pernoite na Chácara</h3>
             <p>Queremos aproveitar cada segundo com vocês! Para os aventureiros e aqueles que desejam estender a celebração, a chácara possui uma área gramada preparada para receber barracas. Sintam-se à vontade para trazer seu equipamento e dormir no local sob as estrelas.</p>
-            <p style={{ fontStyle: 'italic', fontSize: '0.85rem' }}>*Por favor, nos avise na confirmação de presença se pretende acampar.</p>
+            <p style={{ fontStyle: 'italic', fontSize: '0.85rem', marginBottom: '20px' }}>*Por favor, nos avise na confirmação de presença se pretende acampar.</p>
+            <a href="#rsvp" className="btn btn-primary">
+              <Heart size={18} /> Confirmar e Avisar sobre Camping
+            </a>
           </div>
         </div>
       </section>
@@ -231,6 +234,9 @@ const Home: React.FC = () => {
             <div className="card-icon"><Heart size={32} /></div>
             <h3>Uma Entrada Repleta de Amor</h3>
             <p>Nossa cerimônia será marcada por significados. Teremos a honra de receber nossos pais, a doçura da nossa avó, a alegria dos nossos filhos e a companhia de 8 casais de padrinhos que fazem parte da nossa história. Cada passo no corredor será um reflexo do amor que nos rodeia.</p>
+            <a href="#rsvp" className="btn btn-primary" style={{ marginTop: '10px' }}>
+              <Heart size={18} /> Confirmar minha presença
+            </a>
           </div>
         </div>
       </section>
@@ -259,6 +265,9 @@ const Home: React.FC = () => {
                   <Navigation size={18} /> Abrir no Waze
                 </a>
               </div>
+              <a href="#rsvp" className="btn btn-white full-width" style={{ marginTop: '20px', border: '1px solid var(--olive)' }}>
+                <Heart size={18} /> Confirmar Presença
+              </a>
             </div>
             <div className="map-container">
               <iframe 
@@ -285,7 +294,7 @@ const Home: React.FC = () => {
           <div className="cards-container">
             <div className="premium-card" data-aos="fade-up" data-aos-delay="100">
               <div className="card-icon"><Gift size={32} /></div>
-              <h3>Lista Virtual</h3>
+              <h3>Lista de Presentes</h3>
               <p>Preparamos uma lista de itens simbólicos para nossa casa nova em nossa plataforma parceira.</p>
               {WEDDING_DATA.links.giftList ? (
                 <a href={WEDDING_DATA.links.giftList} target="_blank" rel="noreferrer" className="btn btn-outline">Acessar Lista</a>
@@ -295,19 +304,8 @@ const Home: React.FC = () => {
             </div>
 
             <div className="premium-card" data-aos="fade-up" data-aos-delay="200">
-              <div className="card-icon"><Plane size={32} /></div>
-              <h3>Cota Lua de Mel</h3>
-              <p>Ajude-nos a realizar o sonho da nossa viagem para a Itália com cotas simbólicas.</p>
-              {WEDDING_DATA.links.honeymoonCotas ? (
-                <a href={WEDDING_DATA.links.honeymoonCotas} target="_blank" rel="noreferrer" className="btn btn-outline">Contribuir</a>
-              ) : (
-                <button className="btn btn-outline" disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>Em breve</button>
-              )}
-            </div>
-
-            <div className="premium-card" data-aos="fade-up" data-aos-delay="300">
               <div className="card-icon"><Smartphone size={32} /></div>
-              <h3>Pix dos Noivos</h3>
+              <h3>Presente via Pix</h3>
               <p>Se preferir a praticidade, disponibilizamos nosso QR Code e chave Pix para presentes.</p>
               <button onClick={copyPix} className="btn btn-primary">
                 {copySuccess ? <CheckCircle size={18} /> : <Copy size={18} />}
@@ -413,7 +411,7 @@ const Home: React.FC = () => {
       {/* Footer */}
       <footer>
         <div className="container">
-          <div className="footer-logo">Pedro Henrique e Lidiane</div>
+          <div className="footer-logo">Lidiane e Pedro Henrique</div>
           <p className="footer-info">24 de Abril de 2027 • Planaltina - DF</p>
           
           <div className="social-links">
@@ -437,7 +435,7 @@ const AlbumPage: React.FC = () => {
     <div className="wedding-app min-h-screen bg-cream">
       <nav className="navbar scrolled">
         <div className="container nav-content">
-          <Link to="/" className="nav-logo" style={{ color: 'var(--olive)' }}>Pedro Henrique e Lidiane</Link>
+          <Link to="/" className="nav-logo" style={{ color: 'var(--olive)' }}>Lidiane e Pedro Henrique</Link>
           <Link to="/" className="btn btn-outline btn-sm" style={{ padding: '8px 20px', fontSize: '0.75rem' }}>
             <ArrowLeft size={16} /> Voltar ao Site
           </Link>
@@ -448,7 +446,7 @@ const AlbumPage: React.FC = () => {
       </div>
       <footer style={{ marginTop: 'auto' }}>
         <div className="container">
-          <div className="footer-logo" style={{ fontSize: '2.5rem' }}>Pedro Henrique e Lidiane</div>
+          <div className="footer-logo" style={{ fontSize: '2.5rem' }}>Lidiane e Pedro Henrique</div>
           <div className="copyright">
             <p>&copy; 2026 • Todos os direitos reservados</p>
           </div>

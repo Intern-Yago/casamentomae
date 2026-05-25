@@ -5,7 +5,12 @@ import { supabase } from '../lib/supabase';
 interface Photo {
   id: string;
   url: string;
+  uploader_name?: string;
   created_at: string;
+}
+
+interface RSVP {
+  name: string;
 }
 
 const DigitalAlbum: React.FC = () => {
@@ -16,7 +21,52 @@ const DigitalAlbum: React.FC = () => {
   const [previews, setPreviews] = useState<string[]>([]);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [justUploaded, setJustUploaded] = useState(false);
+  const [uploaderName, setUploaderName] = useState('');
+  const [confirmedNames, setConfirmedNames] = useState<string[]>([]);
+  const [nameSuggestions, setNameSuggestions] = useState<string[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const suggestionsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Fetch confirmed names for suggestions
+    const fetchRSVPs = async () => {
+      const { data, error } = await supabase
+        .from('rsvps')
+        .select('name')
+        .eq('attending', true);
+      
+      if (!error && data) {
+        setConfirmedNames(data.map(r => r.name));
+      }
+    };
+
+    fetchRSVPs();
+
+    // Close suggestions on click outside
+    const handleClickOutside = (event: MouseEvent) => {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    // Filter suggestions based on input
+    if (uploaderName.trim().length > 1) {
+      const filtered = confirmedNames.filter(name => 
+        name.toLowerCase().includes(uploaderName.toLowerCase()) &&
+        name.toLowerCase() !== uploaderName.toLowerCase()
+      );
+      setNameSuggestions(filtered.slice(0, 5));
+      setShowSuggestions(filtered.length > 0);
+    } else {
+      setShowSuggestions(false);
+    }
+  }, [uploaderName, confirmedNames]);
 
   useEffect(() => {
     // Garantir que AOS não oculte a div se não for inicializado
@@ -92,7 +142,10 @@ const DigitalAlbum: React.FC = () => {
       // 3. Save to Database
       const { error: dbError } = await supabase
         .from('photos')
-        .insert([{ url: publicUrl }]);
+        .insert([{ 
+          url: publicUrl,
+          uploader_name: uploaderName.trim() || null
+        }]);
 
       if (dbError) {
         console.error('Error saving to DB:', dbError);
@@ -105,6 +158,7 @@ const DigitalAlbum: React.FC = () => {
     setSelectedFiles([]);
     setPreviews([]);
     setJustUploaded(true);
+    setUploaderName('');
   };
 
   const triggerFileInput = () => {
@@ -154,6 +208,63 @@ const DigitalAlbum: React.FC = () => {
                   <div className="text-center mb-8">
                     <p className="mb-4 text-muted">Ajude-nos a eternizar esse dia! Faça o upload das fotos e vídeos que você tirou durante a festa.</p>
                     
+                    {/* Name Input with Autocomplete */}
+                    <div className="form-group mb-8" style={{ maxWidth: '400px', margin: '0 auto 30px', position: 'relative', textAlign: 'left' }}>
+                      <label htmlFor="uploader-name" style={{ color: 'var(--olive)', marginBottom: '8px' }}>Seu Nome (Opcional)</label>
+                      <input 
+                        id="uploader-name"
+                        type="text" 
+                        value={uploaderName}
+                        onChange={(e) => setUploaderName(e.target.value)}
+                        placeholder="Digite seu nome..."
+                        autoComplete="off"
+                        style={{
+                          width: '100%',
+                          padding: '12px 15px',
+                          borderRadius: '10px',
+                          border: '1px solid #ddd',
+                          fontFamily: 'inherit'
+                        }}
+                      />
+                      {showSuggestions && (
+                        <div 
+                          ref={suggestionsRef}
+                          style={{
+                            position: 'absolute',
+                            top: '100%',
+                            left: 0,
+                            right: 0,
+                            backgroundColor: 'white',
+                            border: '1px solid #ddd',
+                            borderRadius: '0 0 10px 10px',
+                            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',
+                            zIndex: 10,
+                            overflow: 'hidden'
+                          }}
+                        >
+                          {nameSuggestions.map((suggestion, idx) => (
+                            <div 
+                              key={idx}
+                              onClick={() => {
+                                setUploaderName(suggestion);
+                                setShowSuggestions(false);
+                              }}
+                              style={{
+                                padding: '10px 15px',
+                                cursor: 'pointer',
+                                transition: 'background-color 0.2s',
+                                borderBottom: idx === nameSuggestions.length - 1 ? 'none' : '1px solid #f0f0f0'
+                              }}
+                              onMouseOver={(e) => e.currentTarget.style.backgroundColor = '#f9f9f9'}
+                              onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}
+                            >
+                              {suggestion}
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
                     <input 
                       type="file" 
                       ref={fileInputRef} 
@@ -312,13 +423,14 @@ const DigitalAlbum: React.FC = () => {
                         overflow: 'hidden', 
                         borderRadius: '12px',
                         boxShadow: 'var(--shadow-sm)',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
+                        position: 'relative'
                       }}
                       onClick={() => window.open(photo.url, '_blank')}
                     >
                       <img 
                         src={photo.url} 
-                        alt="Foto do casamento" 
+                        alt={photo.uploader_name ? `Foto enviada por ${photo.uploader_name}` : "Foto do casamento"} 
                         style={{ 
                           width: '100%', 
                           height: '100%', 
@@ -328,6 +440,21 @@ const DigitalAlbum: React.FC = () => {
                         onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
                         onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
                       />
+                      {photo.uploader_name && (
+                        <div style={{
+                          position: 'absolute',
+                          bottom: 0,
+                          left: 0,
+                          right: 0,
+                          padding: '8px',
+                          background: 'linear-gradient(transparent, rgba(0,0,0,0.7))',
+                          color: 'white',
+                          fontSize: '0.7rem',
+                          textAlign: 'center'
+                        }}>
+                          Por {photo.uploader_name}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
