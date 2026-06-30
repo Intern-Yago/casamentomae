@@ -18,6 +18,16 @@ const Home: React.FC = () => {
   const [isAttending, setIsAttending] = useState(true);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, finished: false });
   const [copySuccess, setCopySuccess] = useState(false);
+  const [adults, setAdults] = useState(0);
+  const [children, setChildren] = useState(0);
+
+  const handleAdultChange = (amount: number) => {
+    setAdults(prev => Math.max(0, prev + amount));
+  };
+
+  const handleChildrenChange = (amount: number) => {
+    setChildren(prev => Math.max(0, prev + amount));
+  };
 
   const calculateTimeLeft = useCallback(() => {
     const weddingDate = new Date("2027-04-24T16:00:00").getTime();
@@ -151,12 +161,38 @@ const Home: React.FC = () => {
               <img src="/img_hist.jpeg" alt="Lidiane e Pedro Henrique" className="story-img" />
             </div>
             <div className="story-text" data-aos="fade-left">
-              <h3>Do primeiro beijo ao sim!</h3>
-              <p>Nossa história começou de forma especial no dia 10 de agosto de 2024, quando o primeiro beijo marcou o início de algo que sabíamos ser único.</p>
-              <p>Não demorou muito para percebermos que queríamos caminhar juntos, e no dia 24 de novembro de 2024, oficializamos nosso namoro.</p>
-              <p>O momento mais emocionante aconteceu em março de 2026, no Restaurante Verona. Em um cenário perfeito, com baú, alianças, luz de velas e o som romântico de um violino, dissemos o "sim" que nos trouxe até aqui.</p>
-              <p>Agora, estamos prontos para celebrar essa união com todos vocês!</p>
-              <a href="#rsvp" className="btn btn-primary" style={{ marginTop: '20px' }}>
+              <h3>Do primeiro "oi" ao sim!</h3>
+              <p>Quem diria que um simples “oi” em uma mesa de bar, entre copos cheios de cerveja, risadas sinceras e conversas sem hora para acabar, seria o começo da história mais linda das nossas vidas?</p>
+              <p>O que parecia apenas uma breve amizade foi crescendo aos poucos. Entre encontros, olhares e conversas, nasceu uma admiração diferente… um carinho leve, verdadeiro e inevitável. Sem perceber, dois corações começaram a se encontrar no meio da rotina, e ali surgia algo muito maior do que qualquer um de nós poderia imaginar: o amor.</p>
+              <p>Nossa história começou de forma única no dia 10 de agosto de 2024, quando o primeiro beijo marcou o início do nosso para sempre. Naquele instante, tivemos a certeza de que existia algo especial entre nós, algo raro, intenso e verdadeiro.</p>
+              <p>Não demorou para entendermos que nossos caminhos já pertenciam um ao outro, e no dia 24 de novembro de 2024, oficializamos nosso namoro, transformando sentimento em parceria, carinho em abrigo e amor em lar.</p>
+              <p>Mas o destino ainda preparava um dos momentos mais inesquecíveis das nossas vidas.</p>
+              <p>Em março de 2026, no inesquecível Restaurante Verona, em um cenário digno dos nossos sonhos, cercados pela luz das velas, pelo som emocionante de um violino, pelas alianças e por cada detalhe preparado com amor, vivemos o momento que ficará eternizado em nossas almas: o nosso “SIM”.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Divisor com o SIM em Destaque */}
+      <section className="story-quote-divider bg-blush-soft" data-aos="zoom-in">
+        <div className="container">
+          <Heart size={36} className="heart-pulse" style={{ color: 'var(--blush)', margin: '0 auto 24px', display: 'block' }} />
+          <p className="quote-line">Um “sim” cheio de emoção.</p>
+          <p className="quote-line">Um “sim” carregado de promessas.</p>
+          <p className="quote-line">Um “sim” que selou a certeza de que queremos viver todos os dias da nossa vida um ao lado do outro.</p>
+        </div>
+      </section>
+
+      {/* Celebrando o Amor */}
+      <section id="celebracao" className="bg-cream">
+        <div className="container">
+          <div className="story-celebration-container" data-aos="fade-up">
+            <p>E agora… chegou o momento de celebrar o amor que nos trouxe até aqui.</p>
+            <p>Com o coração transbordando felicidade, amor e gratidão, queremos compartilhar com vocês o início do capítulo mais importante das nossas vidas: o nosso casamento.</p>
+            <p>Preparem os sorrisos, os abraços e a emoção, porque mal podemos esperar para viver esse sonho ao lado das pessoas que amamos.</p>
+            <h4 className="celebration-welcome">Sejam bem-vindos ao começo do nosso felizes para sempre!!!!</h4>
+            <div style={{ display: 'flex', justifyContent: 'center', marginTop: '40px' }}>
+              <a href="#rsvp" className="btn btn-primary">
                 <Heart size={18} /> Quero Confirmar Presença
               </a>
             </div>
@@ -351,14 +387,65 @@ const Home: React.FC = () => {
                   </div>
 
                   {isAttending && (
-                    <div className="form-group">
-                      <label htmlFor="guests">Quantos acompanhantes?</label>
-                      <select id="guests">
-                        <option value="0">Apenas eu</option>
-                        <option value="1">1 acompanhante</option>
-                        <option value="2">2 acompanhantes</option>
-                        <option value="3">3 acompanhantes</option>
-                      </select>
+                    <div className="form-group full">
+                      <label>Acompanhantes</label>
+                      <div className="companion-selector-container">
+                        {/* Maiores */}
+                        <div className="companion-row">
+                          <div className="companion-info">
+                            <span className="companion-title">Maiores</span>
+                            <span className="companion-subtitle">A partir de 18 anos</span>
+                          </div>
+                          <div className="counter-controls">
+                            <button 
+                              type="button" 
+                              className="counter-btn"
+                              onClick={() => handleAdultChange(-1)}
+                              disabled={adults === 0}
+                              aria-label="Diminuir acompanhantes maiores"
+                            >
+                              -
+                            </button>
+                            <span className="counter-value">{adults}</span>
+                            <button 
+                              type="button" 
+                              className="counter-btn"
+                              onClick={() => handleAdultChange(1)}
+                              aria-label="Aumentar acompanhantes maiores"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+
+                        {/* Menores */}
+                        <div className="companion-row">
+                          <div className="companion-info">
+                            <span className="companion-title">Menores</span>
+                            <span className="companion-subtitle">Até 17 anos</span>
+                          </div>
+                          <div className="counter-controls">
+                            <button 
+                              type="button" 
+                              className="counter-btn"
+                              onClick={() => handleChildrenChange(-1)}
+                              disabled={children === 0}
+                              aria-label="Diminuir acompanhantes menores"
+                            >
+                              -
+                            </button>
+                            <span className="counter-value">{children}</span>
+                            <button 
+                              type="button" 
+                              className="counter-btn"
+                              onClick={() => handleChildrenChange(1)}
+                              aria-label="Aumentar acompanhantes menores"
+                            >
+                              +
+                            </button>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
 
