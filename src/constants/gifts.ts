@@ -158,11 +158,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "colheres-medidoras-01",
-    "title": "8/10 Peças Jogo de Colher Medidora Inox Copo Medidor Xicaras Kit Co...",
+    "title": "Jogo de Colheres e Copos Medidores em Inox (8 a 10 Peças)",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/4qFhBFifDm",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-m85nc6uod4414c_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
     "highlight": false
   },
   {
@@ -185,11 +185,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "luvas-termicas-01",
-    "title": "Luva Térmica Para Forno Par De Luvas Termicas Cozinha Pegador Térmi...",
+    "title": "Par de Luvas Térmicas de Silicone para Forno e Cozinha",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/5fooBJEtQf",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-maygejis7atr69_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rat4-max40fuszhw109",
     "highlight": false
   },
   {
@@ -401,11 +401,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "copos-02",
-    "title": "Jogo de Copos de Vidro Canelado 430ml Conjunto de Copos Grosso 12 U...",
+    "title": "Jogo de Copos de Vidro Canelado 430ml",
     "category": "Copos, Taças & Xícaras",
     "description": "Lindo jogo para servir bebidas com estilo e elegância às nossas visitas.",
     "url": "https://s.shopee.com.br/1ARSgQtTK",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-mdqkztgwjs2957_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rdyx-mdqkrsvsv0f87d",
     "highlight": false
   },
   {
@@ -491,11 +491,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "tacas-03",
-    "title": "Taça de champanhe com borda dourada e detalhes de diamante, estilo...",
+    "title": "Jogo de Taças de Champanhe com Borda Dourada e Detalhes Diamante",
     "category": "Copos, Taças & Xícaras",
     "description": "Para brindar aos momentos inesquecíveis e celebrar a vida a dois.",
     "url": "https://s.shopee.com.br/AUu3yYCArS",
-    "image": "https://down-br.img.susercontent.com/file/sg-11110106-6vcdl-msfdbqsyeio05b_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825ae-msfdc9dj32ti79",
     "highlight": false
   },
   {
