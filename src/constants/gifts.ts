@@ -86,20 +86,20 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "descascador-01",
-    "title": "Descascador INOX Legumes Frutas Dupla Lâmina Móvel 2 Em 1/Descascad...",
+    "title": "Descascador INOX Legumes Frutas Dupla Lâmina Móvel 2 Em 1",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/AUu3uXyEel",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/1c7b5654d20fd3d7e59f3ac17b3d3359",
     "highlight": false
   },
   {
     "id": "espremedor-01",
-    "title": "Espremedor de limão multifuncional espremedor Manual clipe de limão...",
+    "title": "Espremedor de limão multifuncional Manual clipe de limão",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/7Kx28pPKQJ",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825ao-msq54u7fijuy26",
     "highlight": false
   },
   {
@@ -126,7 +126,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/70KBkXeedj",
-    "image": "https://down-br.img.susercontent.com/file/sg-11110106-6kip0-mafzerq8o2kj5a_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rat5-mafzgj25zof66a",
     "highlight": false
   },
   {
@@ -176,11 +176,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "funil-01",
-    "title": "Funil de Silicone dobrável retrátil, suprimentos de cozinha, funil...",
+    "title": "Funil de Silicone Dobrável Retrátil para Cozinha",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/70KBlUPLXf",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825a5-mrd0twq8qryfcc",
     "highlight": false
   },
   {
@@ -284,11 +284,11 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "forma-gelo-01",
-    "title": "Conjunto de Formas de Gelo Redondas: 3 Formas, 1 Recipiente de e Co...",
+    "title": "Conjunto de Formas de Gelo Redondas com Recipiente e Colher",
     "category": "Formas de Gelo",
     "description": "Forma prática para drinks refrescantes e momentos especiais com amigos.",
     "url": "https://s.shopee.com.br/9V1WlDR9Oo",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824i2-mpoiblmo5b7x52",
     "highlight": false
   },
   {
@@ -320,29 +320,29 @@ export const GIFTS_DATA: GiftItem[] = [
   },
   {
     "id": "organizador-03",
-    "title": "Caixa de armazenamento de talheres de madeira caixa organizador de...",
+    "title": "Caixa Organizadora de Talheres em Madeira para Cozinha",
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/9peN9yzyq2",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823q1-monuqj8rbklqe8",
     "highlight": false
   },
   {
     "id": "organizador-04",
-    "title": "Organizador de gaveta de armário importado do Japão, cesta organiza...",
+    "title": "Organizador de Gaveta para Armário e Talheres",
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/6L4UzZhhNC",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824g9-mpze1gvs7f2n52",
     "highlight": false
   },
   {
     "id": "organizador-05",
-    "title": "Porta Talheres Bambu Organizador Separador 5 Divisórias Para Gaveta...",
+    "title": "Porta Talheres em Bambu com 5 Divisórias para Gaveta",
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/7fZsa4OLj1",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rd6y-lw8puq4e3jepd4",
     "highlight": false
   },
   {
@@ -352,15 +352,15 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/AUu3xJ3t2t",
     "image": "https://down-br.img.susercontent.com/file/br-11134201-820m3-mqxgzjl9gs92f7",
-    "highlight": true
+    "highlight": false
   },
   {
     "id": "porta-papel-01",
-    "title": "Kit Porta Papel Toalha + Porta Guardanapos – Praticidade e Elegânci...",
+    "title": "Kit Porta Papel Toalha + Porta Guardanapos",
     "category": "Mesa & Servir",
     "description": "Peça charmosa para compor a mesa posta e receber quem amamos com carinho.",
     "url": "https://s.shopee.com.br/3qNA14t3RB",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823rp-mpbejvpubu9se6",
     "highlight": false
   },
   {
