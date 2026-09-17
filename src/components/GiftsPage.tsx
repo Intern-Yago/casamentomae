@@ -20,8 +20,8 @@ interface GiftClaim {
 const GiftsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [statusFilter, setStatusFilter] = useState<'all' | 'available' | 'claimed' | 'mine' | 'highlights'>('all');
-  const [sortBy, setSortBy] = useState<'highlights' | 'name-asc' | 'name-desc'>('highlights');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'available' | 'claimed' | 'mine'>('all');
+  const [sortBy, setSortBy] = useState<'name-asc' | 'name-desc'>('name-asc');
 
   // Pagination
   const [currentPage, setCurrentPage] = useState<number>(1);
@@ -231,21 +231,14 @@ const GiftsPage: React.FC = () => {
       if (statusFilter === 'available') matchesStatus = !claim;
       else if (statusFilter === 'claimed') matchesStatus = !!claim;
       else if (statusFilter === 'mine') matchesStatus = !!isMine;
-      else if (statusFilter === 'highlights') matchesStatus = !!gift.highlight;
 
       return matchesCategory && matchesSearch && matchesStatus;
     });
 
-    // Sort
+    // Sort alphabetically
     list = [...list].sort((a, b) => {
-      if (sortBy === 'highlights') {
-        if (a.highlight && !b.highlight) return -1;
-        if (!a.highlight && b.highlight) return 1;
-        return a.title.localeCompare(b.title);
-      }
-      if (sortBy === 'name-asc') return a.title.localeCompare(b.title);
       if (sortBy === 'name-desc') return b.title.localeCompare(a.title);
-      return 0;
+      return a.title.localeCompare(b.title);
     });
 
     return list;
@@ -555,195 +548,99 @@ const GiftsPage: React.FC = () => {
       <main className="container" style={{ padding: '40px 20px 80px', maxWidth: '1240px', margin: '0 auto' }}>
         
         {/* Filter Panel */}
-        <div style={{
-          background: 'white',
-          padding: '24px',
-          borderRadius: '20px',
-          boxShadow: '0 4px 20px rgba(0,0,0,0.04)',
-          marginBottom: '36px'
-        }}>
-          {/* Top Row: Search + Sort */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '20px' }}>
-            {/* Search Input */}
-            <div style={{ position: 'relative' }}>
-              <Search size={18} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
+        <div className="gifts-filter-card">
+          {/* Row 1: Search & Sort */}
+          <div className="gifts-search-sort-row">
+            <div className="gifts-search-wrapper">
+              <Search size={18} className="gifts-search-icon" />
               <input 
                 type="text"
-                placeholder="Buscar presente (ex: copos, taças, xícaras, potes, pano de prato...)"
+                className="gifts-search-input"
+                placeholder="Buscar presente (copos, panelas, xícaras, potes...)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{
-                  width: '100%',
-                  padding: '12px 40px 12px 44px',
-                  borderRadius: '30px',
-                  border: '1px solid #e0d8cb',
-                  background: '#faf8f5',
-                  fontSize: '0.95rem',
-                  outline: 'none',
-                  fontFamily: 'inherit'
-                }}
               />
               {searchQuery && (
                 <button 
+                  type="button"
+                  className="gifts-search-clear"
                   onClick={() => setSearchQuery('')}
-                  style={{ position: 'absolute', right: '14px', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: '#888' }}
+                  title="Limpar busca"
                 >
                   <X size={16} />
                 </button>
               )}
             </div>
 
-            {/* Sort Dropdown */}
-            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-end' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                <SlidersHorizontal size={16} style={{ color: '#888' }} />
-                <span style={{ fontSize: '0.85rem', color: '#666' }}>Ordenar:</span>
-              </div>
+            <div className="gifts-sort-wrapper">
+              <SlidersHorizontal size={15} style={{ color: '#8c857b' }} />
               <select
+                className="gifts-sort-select"
                 value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                style={{
-                  padding: '10px 14px',
-                  borderRadius: '20px',
-                  border: '1px solid #e0d8cb',
-                  background: '#faf8f5',
-                  fontSize: '0.85rem',
-                  outline: 'none',
-                  cursor: 'pointer'
-                }}
+                onChange={(e) => setSortBy(e.target.value as 'name-asc' | 'name-desc')}
               >
-                <option value="highlights">⭐ Destaques Primeiro</option>
                 <option value="name-asc">Nome (A - Z)</option>
                 <option value="name-desc">Nome (Z - A)</option>
               </select>
             </div>
           </div>
 
-          {/* Status Quick Pills */}
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '18px', paddingBottom: '16px', borderBottom: '1px solid #f0ebe4' }}>
+          {/* Row 2: Status tabs */}
+          <div className="gifts-status-row">
             <button
+              type="button"
+              className={`gifts-status-btn ${statusFilter === 'all' ? 'active' : ''}`}
               onClick={() => setStatusFilter('all')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '16px',
-                fontSize: '0.82rem',
-                fontWeight: statusFilter === 'all' ? 600 : 400,
-                background: statusFilter === 'all' ? 'var(--olive)' : '#f2eee9',
-                color: statusFilter === 'all' ? '#fff' : '#555',
-                border: 'none',
-                cursor: 'pointer'
-              }}
             >
               Todos ({GIFTS_DATA.length})
             </button>
 
             <button
+              type="button"
+              className={`gifts-status-btn ${statusFilter === 'available' ? 'active' : ''}`}
               onClick={() => setStatusFilter('available')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '16px',
-                fontSize: '0.82rem',
-                fontWeight: statusFilter === 'available' ? 600 : 400,
-                background: statusFilter === 'available' ? 'var(--olive)' : '#f2eee9',
-                color: statusFilter === 'available' ? '#fff' : '#555',
-                border: 'none',
-                cursor: 'pointer'
-              }}
             >
               Disponíveis ({availableCount})
             </button>
 
             <button
+              type="button"
+              className={`gifts-status-btn ${statusFilter === 'claimed' ? 'active' : ''}`}
               onClick={() => setStatusFilter('claimed')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '16px',
-                fontSize: '0.82rem',
-                fontWeight: statusFilter === 'claimed' ? 600 : 400,
-                background: statusFilter === 'claimed' ? 'var(--olive)' : '#f2eee9',
-                color: statusFilter === 'claimed' ? '#fff' : '#555',
-                border: 'none',
-                cursor: 'pointer'
-              }}
             >
               Já Escolhidos ({claimedCount})
             </button>
 
-            <button
-              onClick={() => setStatusFilter('highlights')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '16px',
-                fontSize: '0.82rem',
-                fontWeight: statusFilter === 'highlights' ? 600 : 400,
-                background: statusFilter === 'highlights' ? 'var(--olive)' : '#f2eee9',
-                color: statusFilter === 'highlights' ? '#fff' : '#555',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px'
-              }}
-            >
-              ⭐ Destaques dos Noivos
-            </button>
-
             {guestName && (
               <button
+                type="button"
+                className={`gifts-status-btn ${statusFilter === 'mine' ? 'active' : ''}`}
                 onClick={() => setStatusFilter('mine')}
-                style={{
-                  padding: '6px 14px',
-                  borderRadius: '16px',
-                  fontSize: '0.82rem',
-                  fontWeight: statusFilter === 'mine' ? 600 : 400,
-                  background: statusFilter === 'mine' ? 'var(--olive)' : '#f2eee9',
-                  color: statusFilter === 'mine' ? '#fff' : '#555',
-                  border: 'none',
-                  cursor: 'pointer',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '4px'
-                }}
               >
                 <CheckCircle2 size={14} /> Meus Presentes ({myClaimedCount})
               </button>
             )}
           </div>
 
-          {/* Categories Pills */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-            {GIFT_CATEGORIES.map(category => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                style={{
-                  padding: '7px 16px',
-                  borderRadius: '20px',
-                  fontSize: '0.84rem',
-                  fontWeight: selectedCategory === category ? '600' : '400',
-                  border: selectedCategory === category ? '1px solid var(--olive)' : '1px solid #e4ddd2',
-                  backgroundColor: selectedCategory === category ? 'var(--olive)' : '#fff',
-                  color: selectedCategory === category ? '#fff' : 'var(--text)',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease'
-                }}
-              >
-                {category}
-              </button>
-            ))}
+          {/* Row 3: Categories */}
+          <div className="gifts-categories-section">
+            <div className="gifts-categories-title">Categorias</div>
+            <div className="gifts-categories-row">
+              {GIFT_CATEGORIES.map(category => (
+                <button
+                  key={category}
+                  type="button"
+                  className={`gifts-category-chip ${selectedCategory === category ? 'active' : ''}`}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
           </div>
 
-          {/* Results Summary Bar */}
-          <div style={{
-            marginTop: '16px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            fontSize: '0.85rem',
-            color: '#777',
-            flexWrap: 'wrap',
-            gap: '12px'
-          }}>
+          {/* Row 4: Results & Pagination meta bar */}
+          <div className="gifts-meta-bar">
             <span>
               {totalItems > 0 ? (
                 <>Mostrando <strong>{startIndex}–{endIndex}</strong> de <strong>{totalItems}</strong> presentes</>
@@ -753,25 +650,15 @@ const GiftsPage: React.FC = () => {
             </span>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
-              {/* Items per page selector */}
               {totalItems > 12 && (
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem' }}>
+                <div className="gifts-per-page-group">
                   <span>Por página:</span>
                   {[12, 24, 0].map(val => (
                     <button
                       key={val}
+                      type="button"
+                      className={`gifts-per-page-btn ${itemsPerPage === val ? 'active' : ''}`}
                       onClick={() => setItemsPerPage(val)}
-                      style={{
-                        background: itemsPerPage === val ? 'var(--olive)' : '#fbf8f4',
-                        color: itemsPerPage === val ? 'white' : '#666',
-                        border: itemsPerPage === val ? '1px solid var(--olive)' : '1px solid #dcd3c7',
-                        borderRadius: '6px',
-                        padding: '3px 9px',
-                        fontSize: '0.78rem',
-                        cursor: 'pointer',
-                        fontWeight: itemsPerPage === val ? 600 : 400,
-                        transition: 'all 0.15s ease'
-                      }}
                     >
                       {val === 0 ? 'Todos' : val}
                     </button>
@@ -781,6 +668,7 @@ const GiftsPage: React.FC = () => {
 
               {hasActiveFilters && (
                 <button 
+                  type="button"
                   onClick={() => { setSelectedCategory('Todos'); setSearchQuery(''); setStatusFilter('all'); }}
                   style={{ background: 'none', border: 'none', color: 'var(--olive)', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.82rem' }}
                 >
@@ -836,28 +724,6 @@ const GiftsPage: React.FC = () => {
                     opacity: isClaimedByOther ? 0.88 : 1
                   }}
                 >
-                  {/* Highlight Badge */}
-                  {gift.highlight && (
-                    <span style={{
-                      position: 'absolute',
-                      top: '12px',
-                      left: '12px',
-                      background: 'var(--olive)',
-                      color: 'white',
-                      fontSize: '0.72rem',
-                      fontWeight: 600,
-                      padding: '4px 10px',
-                      borderRadius: '12px',
-                      zIndex: 2,
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '4px',
-                      boxShadow: '0 2px 6px rgba(0,0,0,0.2)'
-                    }}>
-                      <Heart size={12} fill="white" /> Queridinho dos Noivos
-                    </span>
-                  )}
-
                   {/* Real Product Image from Shopee */}
                   <div style={{ position: 'relative', width: '100%', height: '240px', overflow: 'hidden', background: '#faf8f5' }}>
                     <img 
