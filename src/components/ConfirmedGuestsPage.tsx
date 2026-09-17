@@ -275,7 +275,7 @@ const ConfirmedGuestsPage: React.FC = () => {
             }}
           >
             <Gift size={18} />
-            Presentes Escolhidos ({giftClaims.length})
+            Presentes do Chá de Panela ({giftClaims.length})
           </button>
         </div>
 
@@ -537,7 +537,7 @@ const ConfirmedGuestsPage: React.FC = () => {
               boxShadow: '0 2px 10px rgba(0,0,0,0.04)'
             }}>
               <span style={{ fontSize: '0.9rem', color: '#666' }}>
-                Total de <strong>{giftClaims.length}</strong> presentes já marcados por convidados
+                Total de <strong>{giftClaims.length}</strong> presentes do chá de panela já marcados
               </span>
 
               <div style={{ position: 'relative', minWidth: '260px' }}>
@@ -571,10 +571,10 @@ const ConfirmedGuestsPage: React.FC = () => {
                   {giftSearch ? 'Nenhum presente encontrado na busca' : 'Nenhum presente foi marcado ainda'}
                 </h3>
                 <p style={{ color: '#888', maxWidth: '500px', margin: '0 auto 20px' }}>
-                  Assim que os convidados escolherem os itens na lista de presentes, eles aparecerão aqui com o nome de quem vai dar!
+                  Assim que os convidados escolherem os itens na lista do chá de panela, eles aparecerão aqui com o nome de quem vai dar!
                 </p>
                 <Link to="/presentes" className="btn btn-outline btn-sm">
-                  Ver Lista de Presentes
+                  Ver Lista do Chá de Panela
                 </Link>
               </div>
             ) : (

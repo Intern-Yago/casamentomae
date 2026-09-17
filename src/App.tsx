@@ -147,7 +147,7 @@ const Home: React.FC = () => {
             <a href="#dia" onClick={closeMobileMenu}>O Grande Dia</a>
             <a href="#hospedagem" onClick={closeMobileMenu}>Hospedagem</a>
             <a href="#local" onClick={closeMobileMenu}>Localização</a>
-            <Link to="/presentes" onClick={closeMobileMenu}>Lista de Presentes</Link>
+            <Link to="/presentes" onClick={closeMobileMenu}>Chá de Panela</Link>
             <a href="#rsvp" onClick={closeMobileMenu}>Confirmação</a>
           </div>
         </div>
@@ -188,7 +188,7 @@ const Home: React.FC = () => {
 
           <div className="hero-actions" data-aos="fade-up" data-aos-delay="400">
             <a href="#rsvp" className="btn btn-primary"><Heart size={18} /> Confirmar Presença</a>
-            <Link to="/presentes" className="btn btn-white"><Gift size={18} /> Lista de Presentes</Link>
+            <Link to="/presentes" className="btn btn-white"><Gift size={18} /> Chá de Panela</Link>
           </div>
         </div>
       </section>
@@ -361,14 +361,14 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Presentes */}
+      {/* Chá de Panela */}
       <section id="presentes" className="bg-cream">
         <div className="container">
           <div className="section-header" data-aos="fade-up">
-            <p className="section-subtitle">Mimos para os noivos</p>
-            <h2 className="section-title">Lista de Presentes</h2>
+            <p className="section-subtitle">Mimos para o nosso cantinho</p>
+            <h2 className="section-title">Chá de Panela</h2>
             <p className="section-subtitle" style={{ textTransform: 'none', letterSpacing: 'normal', color: 'var(--text)', marginTop: '20px' }}>
-              Sua presença é nosso maior presente! Mas se desejar nos presentear, preparamos uma lista especial de itens para o nosso novo lar.
+              Sua presença é o nosso maior presente! Mas se desejar nos mimar com um mimo para a nossa cozinha e casa nova, preparamos uma lista cheia de carinho.
             </p>
           </div>
 
@@ -377,14 +377,14 @@ const Home: React.FC = () => {
               <Gift size={34} />
             </div>
             <h3 style={{ fontSize: '1.9rem', marginBottom: '14px', fontFamily: 'var(--font-serif)', color: 'var(--text)' }}>
-              Lista de Presentes de Casamento
+              Presentes do Chá de Panela
             </h3>
             <p style={{ maxWidth: '640px', margin: '0 auto 28px', color: 'var(--muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Selecionamos com muito amor cada item da nossa cozinha e decoração (utensílios práticos, panos de prato, jogos de potes herméticos, descansos de panela, organizadores de gaveta e itens de mesa posta) disponíveis na Shopee.
+              Selecionamos com muito amor cada item para equipar a nossa cozinha (jogos de copos, taças, xícaras, utensílios práticos, panos de prato, potes herméticos e organizadores de gaveta) diretamente na Shopee com fotos reais.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
               <Link to="/presentes" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1.05rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
-                <Gift size={20} /> Ver Lista Completa de Presentes
+                <Gift size={20} /> Ver Lista do Chá de Panela
               </Link>
             </div>
           </div>

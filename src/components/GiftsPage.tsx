@@ -507,10 +507,10 @@ const GiftsPage: React.FC = () => {
             <Gift size={30} />
           </div>
           <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.8rem', color: 'var(--text)', marginBottom: '14px' }}>
-            Lista de Presentes de Casamento
+            Lista de Presentes do Chá de Panela
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '20px' }}>
-            Sua presença no nosso grande dia é o nosso maior presente! Mas caso queira nos mimar com um item especial para o nosso novo cantinho, selecionamos estes produtos na Shopee com fotos reais.
+            Cada detalhe foi escolhido com muito carinho para equipar a nossa cozinha e montar o nosso novo cantinho! Sua presença é o nosso maior presente, mas se quiser nos mimar com um item especial, selecionamos essas opções na Shopee com fotos reais.
           </p>
 
           {/* Guest Identity Welcome Bar */}
@@ -538,7 +538,7 @@ const GiftsPage: React.FC = () => {
           ) : (
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.85)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.85rem', color: 'var(--olive)', fontWeight: 600 }}>
               <Sparkles size={16} />
-              <span>{GIFTS_DATA.length} presentes cadastrados com fotos reais</span>
+              <span>{GIFTS_DATA.length} mimos escolhidos com amor para a casa nova</span>
             </div>
           )}
         </div>
@@ -556,7 +556,7 @@ const GiftsPage: React.FC = () => {
               <input 
                 type="text"
                 className="gifts-search-input"
-                placeholder="Buscar presente (copos, panelas, xícaras, potes...)"
+                placeholder="Buscar presentes do chá de panela (copos, taças, potes, xícaras...)"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
