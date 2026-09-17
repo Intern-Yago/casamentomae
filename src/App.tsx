@@ -105,6 +105,15 @@ const Home: React.FC = () => {
         throw error;
       }
 
+      try {
+        localStorage.setItem('guest_name', rsvpForm.name.trim());
+        if (rsvpForm.phone.trim()) {
+          localStorage.setItem('guest_phone', rsvpForm.phone.trim());
+        }
+      } catch (e) {
+        console.error('LocalStorage error:', e);
+      }
+
       setRsvpSubmitted(true);
     } catch (err: any) {
       console.error('Erro no envio do RSVP:', err);

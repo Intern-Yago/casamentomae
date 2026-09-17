@@ -1,56 +1,232 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, Search, Gift, ExternalLink, Heart, Check, 
   Sparkles, ShoppingBag, UtensilsCrossed, SlidersHorizontal,
-  X, CheckCircle2
+  X, CheckCircle2, User, Phone, Loader2
 } from 'lucide-react';
-import { GIFTS_DATA, GIFT_CATEGORIES } from '../constants/gifts';
+import { GIFTS_DATA, GIFT_CATEGORIES, type GiftItem } from '../constants/gifts';
+import { supabase } from '../lib/supabase';
+
+interface GiftClaim {
+  id: string;
+  gift_id: string;
+  gift_title: string;
+  giver_name: string;
+  giver_phone?: string;
+  created_at: string;
+}
 
 const GiftsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('Todos');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [statusFilter, setStatusFilter] = useState<'all' | 'highlights' | 'chosen' | 'available'>('all');
+  const [statusFilter, setStatusFilter] = useState<'all' | 'available' | 'claimed' | 'mine' | 'highlights'>('all');
   const [sortBy, setSortBy] = useState<'highlights' | 'name-asc' | 'name-desc'>('highlights');
 
-  const [chosenItems, setChosenItems] = useState<Record<string, boolean>>(() => {
+  // Stored guest identity
+  const [guestName, setGuestName] = useState<string>(() => {
     try {
-      const saved = localStorage.getItem('chosen_gifts');
-      return saved ? JSON.parse(saved) : {};
+      return localStorage.getItem('guest_name') || '';
     } catch {
-      return {};
+      return '';
     }
   });
 
-  const toggleChosen = (id: string) => {
-    setChosenItems(prev => {
-      const updated = { ...prev, [id]: !prev[id] };
-      try {
-        localStorage.setItem('chosen_gifts', JSON.stringify(updated));
-      } catch (e) {
-        console.error(e);
-      }
-      return updated;
-    });
+  const [guestPhone, setGuestPhone] = useState<string>(() => {
+    try {
+      return localStorage.getItem('guest_phone') || '';
+    } catch {
+      return '';
+    }
+  });
+
+  // Supabase claims
+  const [claims, setClaims] = useState<Record<string, GiftClaim>>({});
+  const [actionLoading, setActionLoading] = useState<string | null>(null);
+
+  // Modal state
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [pendingGift, setPendingGift] = useState<GiftItem | null>(null);
+  const [modalName, setModalName] = useState<string>('');
+  const [modalPhone, setModalPhone] = useState<string>('');
+  const [modalError, setModalError] = useState<string | null>(null);
+
+  // Toast feedback
+  const [toastMessage, setToastMessage] = useState<string | null>(null);
+
+  const showToast = (msg: string) => {
+    setToastMessage(msg);
+    setTimeout(() => setToastMessage(null), 4000);
   };
 
+  // Fetch claims from Supabase
+  const fetchClaims = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('gift_claims')
+        .select('*');
+
+      if (!error && data) {
+        const map: Record<string, GiftClaim> = {};
+        data.forEach((c: GiftClaim) => {
+          map[c.gift_id] = c;
+        });
+        setClaims(map);
+      }
+    } catch (e) {
+      console.error('Error fetching gift claims:', e);
+    }
+  };
+
+  useEffect(() => {
+    fetchClaims();
+  }, []);
+
+  // Claim a gift directly (when name is known)
+  const executeClaim = async (gift: GiftItem, name: string, phone?: string) => {
+    setActionLoading(gift.id);
+    try {
+      const { data, error } = await supabase
+        .from('gift_claims')
+        .insert([{
+          gift_id: gift.id,
+          gift_title: gift.title,
+          giver_name: name.trim(),
+          giver_phone: phone ? phone.trim() : null
+        }])
+        .select();
+
+      if (error) throw error;
+
+      if (data && data[0]) {
+        setClaims(prev => ({ ...prev, [gift.id]: data[0] }));
+        showToast(`Presente "${gift.title}" marcado com sucesso para você, ${name.trim()}!`);
+      }
+    } catch (err: any) {
+      console.error('Claim error:', err);
+      showToast('Ocorreu um erro ao reservar o presente. Tente novamente.');
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // Unclaim a gift
+  const handleUnclaim = async (gift: GiftItem) => {
+    const claim = claims[gift.id];
+    if (!claim) return;
+
+    if (!window.confirm(`Deseja desmarcar o presente "${gift.title}"? Ele voltará a ficar disponível para outros convidados.`)) {
+      return;
+    }
+
+    setActionLoading(gift.id);
+    try {
+      const { error } = await supabase
+        .from('gift_claims')
+        .delete()
+        .eq('gift_id', gift.id);
+
+      if (error) throw error;
+
+      setClaims(prev => {
+        const copy = { ...prev };
+        delete copy[gift.id];
+        return copy;
+      });
+      showToast(`Presente desmarcado com sucesso.`);
+    } catch (err: any) {
+      console.error('Unclaim error:', err);
+      showToast('Não foi possível desmarcar o presente. Tente novamente.');
+    } finally {
+      setActionLoading(null);
+    }
+  };
+
+  // Click on "Marcar presente"
+  const handleClaimClick = (gift: GiftItem) => {
+    if (claims[gift.id]) {
+      // If already claimed by me, allow unclaim
+      const isMine = guestName && claims[gift.id].giver_name.toLowerCase() === guestName.toLowerCase();
+      if (isMine) {
+        handleUnclaim(gift);
+      }
+      return;
+    }
+
+    if (guestName.trim()) {
+      // Known name: claim right away
+      executeClaim(gift, guestName, guestPhone);
+    } else {
+      // Open modal to ask for name
+      setPendingGift(gift);
+      setModalName('');
+      setModalPhone('');
+      setModalError(null);
+      setModalOpen(true);
+    }
+  };
+
+  // Submit modal form
+  const handleModalSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!modalName.trim()) {
+      setModalError('Por favor, digite seu nome completo.');
+      return;
+    }
+
+    const trimmedName = modalName.trim();
+    const trimmedPhone = modalPhone.trim();
+
+    try {
+      localStorage.setItem('guest_name', trimmedName);
+      if (trimmedPhone) localStorage.setItem('guest_phone', trimmedPhone);
+    } catch (e) {
+      console.error(e);
+    }
+
+    setGuestName(trimmedName);
+    setGuestPhone(trimmedPhone);
+    setModalOpen(false);
+
+    if (pendingGift) {
+      executeClaim(pendingGift, trimmedName, trimmedPhone);
+      setPendingGift(null);
+    }
+  };
+
+  // Reset guest identity
+  const handleResetGuest = () => {
+    try {
+      localStorage.removeItem('guest_name');
+      localStorage.removeItem('guest_phone');
+    } catch (e) {}
+    setGuestName('');
+    setGuestPhone('');
+    showToast('Identificação limpa.');
+  };
+
+  // Filter & Sort
   const filteredGifts = useMemo(() => {
     let list = GIFTS_DATA.filter(gift => {
-      // Category filter
+      // Category
       const matchesCategory = selectedCategory === 'Todos' || gift.category === selectedCategory;
       
-      // Search filter
+      // Search
       const q = searchQuery.toLowerCase().trim();
       const matchesSearch = !q || 
         gift.title.toLowerCase().includes(q) ||
         gift.description.toLowerCase().includes(q) ||
         gift.category.toLowerCase().includes(q);
 
-      // Status filter
+      // Status
+      const claim = claims[gift.id];
+      const isMine = guestName && claim && claim.giver_name.toLowerCase() === guestName.toLowerCase();
+      
       let matchesStatus = true;
-      if (statusFilter === 'highlights') matchesStatus = !!gift.highlight;
-      else if (statusFilter === 'chosen') matchesStatus = !!chosenItems[gift.id];
-      else if (statusFilter === 'available') matchesStatus = !chosenItems[gift.id];
+      if (statusFilter === 'available') matchesStatus = !claim;
+      else if (statusFilter === 'claimed') matchesStatus = !!claim;
+      else if (statusFilter === 'mine') matchesStatus = !!isMine;
+      else if (statusFilter === 'highlights') matchesStatus = !!gift.highlight;
 
       return matchesCategory && matchesSearch && matchesStatus;
     });
@@ -68,13 +244,192 @@ const GiftsPage: React.FC = () => {
     });
 
     return list;
-  }, [selectedCategory, searchQuery, statusFilter, sortBy, chosenItems]);
+  }, [selectedCategory, searchQuery, statusFilter, sortBy, claims, guestName]);
 
-  const chosenCount = Object.values(chosenItems).filter(Boolean).length;
+  // Counts
+  const claimedCount = Object.keys(claims).length;
+  const availableCount = GIFTS_DATA.length - claimedCount;
+  const myClaimedCount = guestName 
+    ? Object.values(claims).filter(c => c.giver_name.toLowerCase() === guestName.toLowerCase()).length 
+    : 0;
+
   const hasActiveFilters = selectedCategory !== 'Todos' || searchQuery !== '' || statusFilter !== 'all';
 
   return (
     <div className="wedding-app min-h-screen bg-cream">
+      {/* Toast Notification */}
+      {toastMessage && (
+        <div style={{
+          position: 'fixed',
+          bottom: '24px',
+          right: '24px',
+          background: 'var(--text)',
+          color: 'white',
+          padding: '14px 24px',
+          borderRadius: '30px',
+          boxShadow: '0 6px 20px rgba(0,0,0,0.25)',
+          zIndex: 9999,
+          display: 'flex',
+          alignItems: 'center',
+          gap: '10px',
+          fontSize: '0.92rem',
+          animation: 'fadeIn 0.3s ease'
+        }}>
+          <CheckCircle2 size={18} color="var(--olive)" />
+          <span>{toastMessage}</span>
+        </div>
+      )}
+
+      {/* Name Input Modal */}
+      {modalOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: 'rgba(0, 0, 0, 0.55)',
+          backdropFilter: 'blur(4px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '20px',
+          zIndex: 9999
+        }}>
+          <div style={{
+            background: 'white',
+            borderRadius: '24px',
+            maxWidth: '480px',
+            width: '100%',
+            padding: '32px',
+            boxShadow: '0 20px 40px rgba(0,0,0,0.15)',
+            position: 'relative'
+          }}>
+            <button
+              onClick={() => setModalOpen(false)}
+              style={{
+                position: 'absolute',
+                top: '20px',
+                right: '20px',
+                background: '#f4f0eb',
+                border: 'none',
+                borderRadius: '50%',
+                width: '32px',
+                height: '32px',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                color: '#666'
+              }}
+            >
+              <X size={18} />
+            </button>
+
+            <div style={{ textAlign: 'center', marginBottom: '24px' }}>
+              <div style={{
+                width: '56px',
+                height: '56px',
+                borderRadius: '50%',
+                background: 'var(--blush-soft)',
+                color: 'var(--olive)',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                marginBottom: '12px'
+              }}>
+                <Gift size={28} />
+              </div>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.6rem', color: 'var(--text)', marginBottom: '8px' }}>
+                Quem está presenteando?
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: 'var(--muted)', lineHeight: '1.5' }}>
+                {pendingGift ? (
+                  <>Você está escolhendo <strong>{pendingGift.title}</strong>. Digite seu nome para que os noivos saibam quem escolheu este presente com tanto carinho!</>
+                ) : (
+                  'Digite seu nome para identificar os presentes escolhidos.'
+                )}
+              </p>
+            </div>
+
+            <form onSubmit={handleModalSubmit}>
+              <div style={{ marginBottom: '16px' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
+                  Seu Nome Completo *
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <User size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
+                  <input 
+                    type="text"
+                    required
+                    placeholder="Ex: Maria Clara Souza"
+                    value={modalName}
+                    onChange={(e) => setModalName(e.target.value)}
+                    autoFocus
+                    style={{
+                      width: '100%',
+                      padding: '12px 14px 12px 42px',
+                      borderRadius: '12px',
+                      border: '1px solid #dcd3c7',
+                      fontSize: '0.95rem',
+                      outline: 'none',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: '24px' }}>
+                <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, color: 'var(--text)', marginBottom: '6px' }}>
+                  Seu WhatsApp (opcional)
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <Phone size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
+                  <input 
+                    type="tel"
+                    placeholder="(61) 99999-9999"
+                    value={modalPhone}
+                    onChange={(e) => setModalPhone(e.target.value)}
+                    style={{
+                      width: '100%',
+                      padding: '12px 14px 12px 42px',
+                      borderRadius: '12px',
+                      border: '1px solid #dcd3c7',
+                      fontSize: '0.95rem',
+                      outline: 'none',
+                      fontFamily: 'inherit'
+                    }}
+                  />
+                </div>
+              </div>
+
+              {modalError && (
+                <div style={{ color: '#d32f2f', background: '#ffebee', padding: '10px 14px', borderRadius: '8px', fontSize: '0.85rem', marginBottom: '16px' }}>
+                  {modalError}
+                </div>
+              )}
+
+              <div style={{ display: 'flex', gap: '10px' }}>
+                <button
+                  type="button"
+                  className="btn btn-outline full-width"
+                  onClick={() => setModalOpen(false)}
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="btn btn-primary full-width"
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                >
+                  <Check size={18} /> Confirmar Presente
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+
       {/* Top Navbar */}
       <header className="navbar scrolled sticky-top">
         <div className="container nav-content">
@@ -110,16 +465,41 @@ const GiftsPage: React.FC = () => {
             Lista de Presentes de Casamento
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '20px' }}>
-            Sua presença no nosso grande dia é o nosso maior presente! Mas caso queira nos mimar com um item especial para o nosso novo lar, preparamos esta lista com fotos reais e links diretos da Shopee.
+            Sua presença no nosso grande dia é o nosso maior presente! Mas caso queira nos mimar com um item especial para o nosso novo cantinho, selecionamos estes produtos na Shopee com fotos reais.
           </p>
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.85)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.85rem', color: 'var(--olive)', fontWeight: 600 }}>
-            <Sparkles size={16} />
-            <span>{GIFTS_DATA.length} presentes selecionados com carinho</span>
-          </div>
+
+          {/* Guest Identity Welcome Bar */}
+          {guestName ? (
+            <div style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '10px',
+              background: 'white',
+              padding: '8px 20px',
+              borderRadius: '24px',
+              boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+              fontSize: '0.9rem',
+              color: 'var(--text)'
+            }}>
+              <span>Olá, <strong>{guestName}</strong>!</span>
+              <span style={{ color: '#ccc' }}>•</span>
+              <button
+                onClick={handleResetGuest}
+                style={{ background: 'none', border: 'none', color: 'var(--olive)', cursor: 'pointer', textDecoration: 'underline', fontSize: '0.82rem' }}
+              >
+                Trocar de nome
+              </button>
+            </div>
+          ) : (
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(255,255,255,0.85)', padding: '6px 16px', borderRadius: '20px', fontSize: '0.85rem', color: 'var(--olive)', fontWeight: 600 }}>
+              <Sparkles size={16} />
+              <span>{GIFTS_DATA.length} presentes cadastrados com fotos reais</span>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Filters & Content */}
+      {/* Main Content */}
       <main className="container" style={{ padding: '40px 20px 80px', maxWidth: '1240px', margin: '0 auto' }}>
         
         {/* Filter Panel */}
@@ -132,7 +512,7 @@ const GiftsPage: React.FC = () => {
         }}>
           {/* Top Row: Search + Sort */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '16px', marginBottom: '20px' }}>
-            {/* Search */}
+            {/* Search Input */}
             <div style={{ position: 'relative' }}>
               <Search size={18} style={{ position: 'absolute', left: '16px', top: '50%', transform: 'translateY(-50%)', color: '#999' }} />
               <input 
@@ -161,7 +541,7 @@ const GiftsPage: React.FC = () => {
               )}
             </div>
 
-            {/* Status & Sort Controls */}
+            {/* Sort Dropdown */}
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'flex-end' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
                 <SlidersHorizontal size={16} style={{ color: '#888' }} />
@@ -202,7 +582,39 @@ const GiftsPage: React.FC = () => {
                 cursor: 'pointer'
               }}
             >
-              Todos os Presentes ({GIFTS_DATA.length})
+              Todos ({GIFTS_DATA.length})
+            </button>
+
+            <button
+              onClick={() => setStatusFilter('available')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '16px',
+                fontSize: '0.82rem',
+                fontWeight: statusFilter === 'available' ? 600 : 400,
+                background: statusFilter === 'available' ? 'var(--olive)' : '#f2eee9',
+                color: statusFilter === 'available' ? '#fff' : '#555',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Disponíveis ({availableCount})
+            </button>
+
+            <button
+              onClick={() => setStatusFilter('claimed')}
+              style={{
+                padding: '6px 14px',
+                borderRadius: '16px',
+                fontSize: '0.82rem',
+                fontWeight: statusFilter === 'claimed' ? 600 : 400,
+                background: statusFilter === 'claimed' ? 'var(--olive)' : '#f2eee9',
+                color: statusFilter === 'claimed' ? '#fff' : '#555',
+                border: 'none',
+                cursor: 'pointer'
+              }}
+            >
+              Já Escolhidos ({claimedCount})
             </button>
 
             <button
@@ -224,24 +636,26 @@ const GiftsPage: React.FC = () => {
               ⭐ Destaques dos Noivos
             </button>
 
-            <button
-              onClick={() => setStatusFilter('chosen')}
-              style={{
-                padding: '6px 14px',
-                borderRadius: '16px',
-                fontSize: '0.82rem',
-                fontWeight: statusFilter === 'chosen' ? 600 : 400,
-                background: statusFilter === 'chosen' ? 'var(--olive)' : '#f2eee9',
-                color: statusFilter === 'chosen' ? '#fff' : '#555',
-                border: 'none',
-                cursor: 'pointer',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '4px'
-              }}
-            >
-              <CheckCircle2 size={14} /> Marcados por mim ({chosenCount})
-            </button>
+            {guestName && (
+              <button
+                onClick={() => setStatusFilter('mine')}
+                style={{
+                  padding: '6px 14px',
+                  borderRadius: '16px',
+                  fontSize: '0.82rem',
+                  fontWeight: statusFilter === 'mine' ? 600 : 400,
+                  background: statusFilter === 'mine' ? 'var(--olive)' : '#f2eee9',
+                  color: statusFilter === 'mine' ? '#fff' : '#555',
+                  border: 'none',
+                  cursor: 'pointer',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '4px'
+                }}
+              >
+                <CheckCircle2 size={14} /> Meus Presentes ({myClaimedCount})
+              </button>
+            )}
           </div>
 
           {/* Categories Pills */}
@@ -301,7 +715,11 @@ const GiftsPage: React.FC = () => {
             gap: '24px'
           }}>
             {filteredGifts.map((gift) => {
-              const isChosen = !!chosenItems[gift.id];
+              const claim = claims[gift.id];
+              const isClaimedByMe = !!(guestName && claim && claim.giver_name.toLowerCase() === guestName.toLowerCase());
+              const isClaimedByOther = !!(claim && !isClaimedByMe);
+              const isProcessing = actionLoading === gift.id;
+
               return (
                 <div 
                   key={gift.id}
@@ -315,7 +733,8 @@ const GiftsPage: React.FC = () => {
                     boxShadow: '0 4px 16px rgba(0,0,0,0.04)',
                     transition: 'transform 0.2s ease, box-shadow 0.2s ease',
                     position: 'relative',
-                    border: isChosen ? '2px solid var(--olive)' : '1px solid #efe8de'
+                    border: isClaimedByMe ? '2px solid var(--olive)' : isClaimedByOther ? '1px solid #e2d9cd' : '1px solid #efe8de',
+                    opacity: isClaimedByOther ? 0.88 : 1
                   }}
                 >
                   {/* Highlight Badge */}
@@ -356,6 +775,50 @@ const GiftsPage: React.FC = () => {
                         transition: 'transform 0.3s ease'
                       }}
                     />
+
+                    {/* Claim status badge overlay on image */}
+                    {isClaimedByMe && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: '#2e7d32',
+                        color: 'white',
+                        padding: '4px 12px',
+                        borderRadius: '14px',
+                        fontSize: '0.75rem',
+                        fontWeight: 600,
+                        boxShadow: '0 2px 8px rgba(0,0,0,0.25)',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        zIndex: 2
+                      }}>
+                        <Check size={14} /> Escolhido por você!
+                      </div>
+                    )}
+
+                    {isClaimedByOther && (
+                      <div style={{
+                        position: 'absolute',
+                        top: '12px',
+                        right: '12px',
+                        background: 'rgba(50, 50, 50, 0.85)',
+                        backdropFilter: 'blur(4px)',
+                        color: 'white',
+                        padding: '4px 12px',
+                        borderRadius: '14px',
+                        fontSize: '0.75rem',
+                        fontWeight: 500,
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '4px',
+                        zIndex: 2
+                      }}>
+                        <Heart size={12} fill="white" /> Escolhido por {claim.giver_name}
+                      </div>
+                    )}
+
                     <div style={{
                       position: 'absolute',
                       bottom: '10px',
@@ -400,6 +863,7 @@ const GiftsPage: React.FC = () => {
 
                     {/* Action Buttons */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                      {/* Shopee Buy Link */}
                       <a 
                         href={gift.url}
                         target="_blank"
@@ -422,34 +886,85 @@ const GiftsPage: React.FC = () => {
                         <ExternalLink size={14} style={{ opacity: 0.8 }} />
                       </a>
 
-                      <button
-                        type="button"
-                        onClick={() => toggleChosen(gift.id)}
-                        style={{
-                          background: isChosen ? '#edf5ed' : 'transparent',
-                          border: isChosen ? '1px solid var(--olive)' : '1px solid #e0d8cb',
-                          color: isChosen ? 'var(--olive)' : '#666',
+                      {/* Claim Button */}
+                      {isClaimedByMe ? (
+                        <button
+                          type="button"
+                          onClick={() => handleClaimClick(gift)}
+                          disabled={isProcessing}
+                          style={{
+                            background: '#edf5ed',
+                            border: '1px solid var(--olive)',
+                            color: '#2e7d32',
+                            borderRadius: '8px',
+                            padding: '8px 12px',
+                            fontSize: '0.78rem',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px',
+                            transition: 'all 0.2s',
+                            fontWeight: 500
+                          }}
+                          title="Clique para desmarcar caso queira trocar de presente"
+                        >
+                          {isProcessing ? (
+                            <Loader2 size={14} className="spin" />
+                          ) : (
+                            <>
+                              <Check size={14} /> Marcado por você (Clique para desmarcar)
+                            </>
+                          )}
+                        </button>
+                      ) : isClaimedByOther ? (
+                        <div style={{
+                          background: '#f8f6f3',
+                          border: '1px dashed #dcd3c7',
+                          color: '#777',
                           borderRadius: '8px',
-                          padding: '7px 12px',
+                          padding: '8px 12px',
                           fontSize: '0.78rem',
-                          cursor: 'pointer',
-                          display: 'inline-flex',
+                          textAlign: 'center',
+                          display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          gap: '6px',
-                          transition: 'all 0.2s'
-                        }}
-                      >
-                        {isChosen ? (
-                          <>
-                            <Check size={14} /> Marcado como meu presente!
-                          </>
-                        ) : (
-                          <>
-                            Marcar como meu presente
-                          </>
-                        )}
-                      </button>
+                          gap: '6px'
+                        }}>
+                          <Heart size={13} color="var(--blush)" fill="var(--blush)" />
+                          <span>Já escolhido por <strong>{claim.giver_name}</strong></span>
+                        </div>
+                      ) : (
+                        <button
+                          type="button"
+                          onClick={() => handleClaimClick(gift)}
+                          disabled={isProcessing}
+                          style={{
+                            background: 'transparent',
+                            border: '1px solid #dcd3c7',
+                            color: 'var(--text)',
+                            borderRadius: '8px',
+                            padding: '8px 12px',
+                            fontSize: '0.8rem',
+                            cursor: 'pointer',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            gap: '6px',
+                            transition: 'all 0.2s',
+                            fontWeight: 500
+                          }}
+                        >
+                          {isProcessing ? (
+                            <Loader2 size={14} className="spin" />
+                          ) : (
+                            <>
+                              <Gift size={14} color="var(--olive)" />
+                              Vou dar este presente
+                            </>
+                          )}
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
