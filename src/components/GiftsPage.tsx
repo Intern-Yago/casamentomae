@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowLeft, Search, Gift, ExternalLink, Heart, Check, 
   Sparkles, ShoppingBag, UtensilsCrossed, SlidersHorizontal,
-  X, CheckCircle2, User, Phone, Loader2
+  X, CheckCircle2, User, Phone, Loader2, ChevronLeft, ChevronRight
 } from 'lucide-react';
 import { GIFTS_DATA, GIFT_CATEGORIES, type GiftItem } from '../constants/gifts';
 import { supabase } from '../lib/supabase';
@@ -22,6 +22,11 @@ const GiftsPage: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [statusFilter, setStatusFilter] = useState<'all' | 'available' | 'claimed' | 'mine' | 'highlights'>('all');
   const [sortBy, setSortBy] = useState<'highlights' | 'name-asc' | 'name-desc'>('highlights');
+
+  // Pagination
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [itemsPerPage, setItemsPerPage] = useState<number>(12);
+  const gridSectionRef = useRef<HTMLDivElement>(null);
 
   // Stored guest identity
   const [guestName, setGuestName] = useState<string>(() => {
@@ -254,6 +259,53 @@ const GiftsPage: React.FC = () => {
     : 0;
 
   const hasActiveFilters = selectedCategory !== 'Todos' || searchQuery !== '' || statusFilter !== 'all';
+
+  // Reset to page 1 on filter or itemsPerPage change
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, searchQuery, statusFilter, sortBy, itemsPerPage]);
+
+  // Pagination computations
+  const totalItems = filteredGifts.length;
+  const totalPages = itemsPerPage > 0 ? Math.max(1, Math.ceil(totalItems / itemsPerPage)) : 1;
+  const safeCurrentPage = Math.min(currentPage, totalPages);
+
+  const paginatedGifts = useMemo(() => {
+    if (itemsPerPage <= 0) return filteredGifts;
+    const start = (safeCurrentPage - 1) * itemsPerPage;
+    return filteredGifts.slice(start, start + itemsPerPage);
+  }, [filteredGifts, safeCurrentPage, itemsPerPage]);
+
+  const startIndex = totalItems === 0 ? 0 : itemsPerPage > 0 ? (safeCurrentPage - 1) * itemsPerPage + 1 : 1;
+  const endIndex = itemsPerPage > 0 ? Math.min(safeCurrentPage * itemsPerPage, totalItems) : totalItems;
+
+  const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages || page === safeCurrentPage) return;
+    setCurrentPage(page);
+    if (gridSectionRef.current) {
+      gridSectionRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const getPageNumbers = () => {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, i) => i + 1);
+    }
+    const pages: (number | string)[] = [1];
+    if (safeCurrentPage > 3) {
+      pages.push('...');
+    }
+    const start = Math.max(2, safeCurrentPage - 1);
+    const end = Math.min(totalPages - 1, safeCurrentPage + 1);
+    for (let i = start; i <= end; i++) {
+      pages.push(i);
+    }
+    if (safeCurrentPage < totalPages - 2) {
+      pages.push('...');
+    }
+    pages.push(totalPages);
+    return pages;
+  };
 
   return (
     <div className="wedding-app min-h-screen bg-cream">
@@ -682,18 +734,65 @@ const GiftsPage: React.FC = () => {
           </div>
 
           {/* Results Summary Bar */}
-          <div style={{ marginTop: '16px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.85rem', color: '#777' }}>
-            <span>Exibindo <strong>{filteredGifts.length}</strong> de {GIFTS_DATA.length} produtos</span>
-            {hasActiveFilters && (
-              <button 
-                onClick={() => { setSelectedCategory('Todos'); setSearchQuery(''); setStatusFilter('all'); }}
-                style={{ background: 'none', border: 'none', color: 'var(--olive)', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.82rem' }}
-              >
-                Limpar todos os filtros
-              </button>
-            )}
+          <div style={{
+            marginTop: '16px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: '0.85rem',
+            color: '#777',
+            flexWrap: 'wrap',
+            gap: '12px'
+          }}>
+            <span>
+              {totalItems > 0 ? (
+                <>Mostrando <strong>{startIndex}–{endIndex}</strong> de <strong>{totalItems}</strong> presentes</>
+              ) : (
+                <>Nenhum presente encontrado</>
+              )}
+            </span>
+
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              {/* Items per page selector */}
+              {totalItems > 12 && (
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.82rem' }}>
+                  <span>Por página:</span>
+                  {[12, 24, 0].map(val => (
+                    <button
+                      key={val}
+                      onClick={() => setItemsPerPage(val)}
+                      style={{
+                        background: itemsPerPage === val ? 'var(--olive)' : '#fbf8f4',
+                        color: itemsPerPage === val ? 'white' : '#666',
+                        border: itemsPerPage === val ? '1px solid var(--olive)' : '1px solid #dcd3c7',
+                        borderRadius: '6px',
+                        padding: '3px 9px',
+                        fontSize: '0.78rem',
+                        cursor: 'pointer',
+                        fontWeight: itemsPerPage === val ? 600 : 400,
+                        transition: 'all 0.15s ease'
+                      }}
+                    >
+                      {val === 0 ? 'Todos' : val}
+                    </button>
+                  ))}
+                </div>
+              )}
+
+              {hasActiveFilters && (
+                <button 
+                  onClick={() => { setSelectedCategory('Todos'); setSearchQuery(''); setStatusFilter('all'); }}
+                  style={{ background: 'none', border: 'none', color: 'var(--olive)', textDecoration: 'underline', cursor: 'pointer', fontSize: '0.82rem' }}
+                >
+                  Limpar todos os filtros
+                </button>
+              )}
+            </div>
           </div>
         </div>
+
+        {/* Scroll anchor */}
+        <div ref={gridSectionRef} style={{ scrollMarginTop: '30px' }} />
 
         {/* Products Grid */}
         {filteredGifts.length === 0 ? (
@@ -714,7 +813,7 @@ const GiftsPage: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '24px'
           }}>
-            {filteredGifts.map((gift) => {
+            {paginatedGifts.map((gift) => {
               const claim = claims[gift.id];
               const isClaimedByMe = !!(guestName && claim && claim.giver_name.toLowerCase() === guestName.toLowerCase());
               const isClaimedByOther = !!(claim && !isClaimedByMe);
@@ -970,6 +1069,113 @@ const GiftsPage: React.FC = () => {
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {/* Pagination Controls */}
+        {filteredGifts.length > 0 && totalPages > 1 && (
+          <div style={{
+            marginTop: '48px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '16px'
+          }}>
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              flexWrap: 'wrap',
+              justifyContent: 'center'
+            }}>
+              {/* Previous Button */}
+              <button
+                type="button"
+                onClick={() => handlePageChange(safeCurrentPage - 1)}
+                disabled={safeCurrentPage === 1}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '9px 16px',
+                  borderRadius: '10px',
+                  border: '1px solid #dcd3c7',
+                  background: safeCurrentPage === 1 ? '#f5f5f5' : 'white',
+                  color: safeCurrentPage === 1 ? '#bbb' : 'var(--text)',
+                  cursor: safeCurrentPage === 1 ? 'not-allowed' : 'pointer',
+                  fontSize: '0.86rem',
+                  fontWeight: 500,
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                <ChevronLeft size={16} /> Anterior
+              </button>
+
+              {/* Page Numbers */}
+              {getPageNumbers().map((p, idx) => {
+                if (p === '...') {
+                  return (
+                    <span key={`ellipsis-${idx}`} style={{ padding: '0 4px', color: '#999', fontSize: '1rem' }}>
+                      …
+                    </span>
+                  );
+                }
+                const pageNum = Number(p);
+                const isActive = pageNum === safeCurrentPage;
+                return (
+                  <button
+                    key={pageNum}
+                    type="button"
+                    onClick={() => handlePageChange(pageNum)}
+                    style={{
+                      minWidth: '40px',
+                      height: '40px',
+                      borderRadius: '10px',
+                      border: isActive ? '1px solid var(--olive)' : '1px solid #dcd3c7',
+                      background: isActive ? 'var(--olive)' : 'white',
+                      color: isActive ? 'white' : 'var(--text)',
+                      fontWeight: isActive ? 700 : 500,
+                      cursor: 'pointer',
+                      fontSize: '0.9rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      boxShadow: isActive ? '0 3px 10px rgba(92, 107, 74, 0.25)' : 'none',
+                      transition: 'all 0.2s ease'
+                    }}
+                  >
+                    {pageNum}
+                  </button>
+                );
+              })}
+
+              {/* Next Button */}
+              <button
+                type="button"
+                onClick={() => handlePageChange(safeCurrentPage + 1)}
+                disabled={safeCurrentPage === totalPages}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '9px 16px',
+                  borderRadius: '10px',
+                  border: '1px solid #dcd3c7',
+                  background: safeCurrentPage === totalPages ? '#f5f5f5' : 'white',
+                  color: safeCurrentPage === totalPages ? '#bbb' : 'var(--text)',
+                  cursor: safeCurrentPage === totalPages ? 'not-allowed' : 'pointer',
+                  fontSize: '0.86rem',
+                  fontWeight: 500,
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Próxima <ChevronRight size={16} />
+              </button>
+            </div>
+
+            <div style={{ fontSize: '0.84rem', color: '#888' }}>
+              Página <strong>{safeCurrentPage}</strong> de <strong>{totalPages}</strong> • {totalItems} presentes no catálogo
+            </div>
           </div>
         )}
 
