@@ -1,0 +1,27 @@
+name: Supabase Keep-Alive
+
+on:
+  schedule:
+    # Runs at 04:00 UTC every 2 days
+    - cron: '0 4 */2 * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install pg
+        run: npm install --no-save pg
+
+      - name: Ping Supabase Database
+        env:
+          DATABASE_URL: ${{ secrets.SUPABASE_DATABASE_URL || 'postgresql://postgres:Wkj4SgOqGcjsLwja@db.xmafdbruxaegougiqugr.supabase.co:5432/postgres' }}
+        run: node scripts/keep-alive.js

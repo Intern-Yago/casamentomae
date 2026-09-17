@@ -4,12 +4,15 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { 
   Menu, X, Calendar, MapPin, Gift, Plane, 
-  Smartphone, Camera, Heart, CheckCircle,
-  ExternalLink, Navigation, Clock, Lock, Copy,
-  ArrowLeft
+  Camera, Heart, CheckCircle,
+  ExternalLink, Navigation, Clock, Lock,
+  ArrowLeft, Loader2
 } from 'lucide-react';
 import { WEDDING_DATA } from './constants/wedding';
 import DigitalAlbum from './components/DigitalAlbum';
+import GiftsPage from './components/GiftsPage';
+import ConfirmedGuestsPage from './components/ConfirmedGuestsPage';
+import { supabase } from './lib/supabase';
 
 const Home: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -17,9 +20,18 @@ const Home: React.FC = () => {
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [isAttending, setIsAttending] = useState(true);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0, finished: false });
-  const [copySuccess, setCopySuccess] = useState(false);
   const [adults, setAdults] = useState(0);
   const [children, setChildren] = useState(0);
+
+  // RSVP Form state
+  const [rsvpForm, setRsvpForm] = useState({
+    name: '',
+    phone: '',
+    diet: '',
+    message: ''
+  });
+  const [rsvpLoading, setRsvpLoading] = useState(false);
+  const [rsvpError, setRsvpError] = useState<string | null>(null);
 
   const handleAdultChange = (amount: number) => {
     setAdults(prev => Math.max(0, prev + amount));
@@ -67,15 +79,39 @@ const Home: React.FC = () => {
     };
   }, [calculateTimeLeft]);
 
-  const handleRsvpSubmit = (e: React.FormEvent) => {
+  const handleRsvpSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setRsvpSubmitted(true);
-  };
+    setRsvpLoading(true);
+    setRsvpError(null);
 
-  const copyPix = () => {
-    navigator.clipboard.writeText(WEDDING_DATA.links.pixKey);
-    setCopySuccess(true);
-    setTimeout(() => setCopySuccess(false), 2000);
+    try {
+      const { error } = await supabase
+        .from('rsvps')
+        .insert([
+          {
+            name: rsvpForm.name.trim(),
+            phone: rsvpForm.phone.trim(),
+            attending: isAttending,
+            adults: isAttending ? adults : 0,
+            children: isAttending ? children : 0,
+            guests: isAttending ? (adults + 1 + children) : 0,
+            diet: isAttending && rsvpForm.diet.trim() ? rsvpForm.diet.trim() : null,
+            message: rsvpForm.message.trim() ? rsvpForm.message.trim() : null,
+          }
+        ]);
+
+      if (error) {
+        console.error('Erro ao registrar confirmação no Supabase:', error);
+        throw error;
+      }
+
+      setRsvpSubmitted(true);
+    } catch (err: any) {
+      console.error('Erro no envio do RSVP:', err);
+      setRsvpError('Houve um erro ao enviar sua confirmação. Por favor, tente novamente ou fale diretamente conosco.');
+    } finally {
+      setRsvpLoading(false);
+    }
   };
 
   const closeMobileMenu = () => setMobileMenuOpen(false);
@@ -102,7 +138,7 @@ const Home: React.FC = () => {
             <a href="#dia" onClick={closeMobileMenu}>O Grande Dia</a>
             <a href="#hospedagem" onClick={closeMobileMenu}>Hospedagem</a>
             <a href="#local" onClick={closeMobileMenu}>Localização</a>
-            <a href="#presentes" onClick={closeMobileMenu}>Presentes</a>
+            <Link to="/presentes" onClick={closeMobileMenu}>Lista de Presentes</Link>
             <a href="#rsvp" onClick={closeMobileMenu}>Confirmação</a>
           </div>
         </div>
@@ -143,7 +179,7 @@ const Home: React.FC = () => {
 
           <div className="hero-actions" data-aos="fade-up" data-aos-delay="400">
             <a href="#rsvp" className="btn btn-primary"><Heart size={18} /> Confirmar Presença</a>
-            <a href="#local" className="btn btn-white"><MapPin size={18} /> Ver Localização</a>
+            <Link to="/presentes" className="btn btn-white"><Gift size={18} /> Lista de Presentes</Link>
           </div>
         </div>
       </section>
@@ -165,7 +201,7 @@ const Home: React.FC = () => {
               <p>Quem diria que um simples “oi” em uma mesa de bar, entre copos cheios de cerveja, risadas sinceras e conversas sem hora para acabar, seria o começo da história mais linda das nossas vidas?</p>
               <p>O que parecia apenas uma breve amizade foi crescendo aos poucos. Entre encontros, olhares e conversas, nasceu uma admiração diferente… um carinho leve, verdadeiro e inevitável. Sem perceber, dois corações começaram a se encontrar no meio da rotina, e ali surgia algo muito maior do que qualquer um de nós poderia imaginar: o amor.</p>
               <p>Nossa história começou de forma única no dia 10 de agosto de 2024, quando o primeiro beijo marcou o início do nosso para sempre. Naquele instante, tivemos a certeza de que existia algo especial entre nós, algo raro, intenso e verdadeiro.</p>
-              <p>Não demorou para entendermos que nossos caminhos já pertenciam um ao outro, e no dia 24 de novembro de 2024, oficializamos nosso namoro, transformando sentimento em parceria, carinho em abrigo e amor em lar.</p>
+              <p>Não demorou para entendermos que nossos caminhos já pertenciam um ao outro, e no dia 24 de novembro de 2025, oficializamos nosso namoro, transformando sentimento em parceria, carinho em abrigo e amor em lar.</p>
               <p>Mas o destino ainda preparava um dos momentos mais inesquecíveis das nossas vidas.</p>
               <p>Em março de 2026, no inesquecível Restaurante Verona, em um cenário digno dos nossos sonhos, cercados pela luz das velas, pelo som emocionante de um violino, pelas alianças e por cada detalhe preparado com amor, vivemos o momento que ficará eternizado em nossas almas: o nosso “SIM”.</p>
             </div>
@@ -323,30 +359,24 @@ const Home: React.FC = () => {
             <p className="section-subtitle">Mimos para os noivos</p>
             <h2 className="section-title">Lista de Presentes</h2>
             <p className="section-subtitle" style={{ textTransform: 'none', letterSpacing: 'normal', color: 'var(--text)', marginTop: '20px' }}>
-              Sua presença é nosso maior presente! Mas se desejar nos presentear, preparamos algumas opções.
+              Sua presença é nosso maior presente! Mas se desejar nos presentear, preparamos uma lista especial de itens para o nosso novo lar.
             </p>
           </div>
 
-          <div className="cards-container">
-            <div className="premium-card" data-aos="fade-up" data-aos-delay="100">
-              <div className="card-icon"><Gift size={32} /></div>
-              <h3>Lista de Presentes</h3>
-              <p>Preparamos uma lista de itens simbólicos para nossa casa nova em nossa plataforma parceira.</p>
-              {WEDDING_DATA.links.giftList ? (
-                <a href={WEDDING_DATA.links.giftList} target="_blank" rel="noreferrer" className="btn btn-outline">Acessar Lista</a>
-              ) : (
-                <button className="btn btn-outline" disabled style={{ opacity: 0.5, cursor: 'not-allowed' }}>Em breve</button>
-              )}
+          <div className="premium-card" style={{ maxWidth: '820px', margin: '0 auto', textAlign: 'center', padding: '48px 32px', background: 'white', borderRadius: '20px', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }} data-aos="fade-up">
+            <div style={{ margin: '0 auto 20px', background: 'var(--blush-soft)', color: 'var(--olive)', width: '68px', height: '68px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Gift size={34} />
             </div>
-
-            <div className="premium-card" data-aos="fade-up" data-aos-delay="200">
-              <div className="card-icon"><Smartphone size={32} /></div>
-              <h3>Presente via Pix</h3>
-              <p>Se preferir a praticidade, disponibilizamos nosso QR Code e chave Pix para presentes.</p>
-              <button onClick={copyPix} className="btn btn-primary">
-                {copySuccess ? <CheckCircle size={18} /> : <Copy size={18} />}
-                {copySuccess ? 'Copiado!' : 'Copiar Chave Pix'}
-              </button>
+            <h3 style={{ fontSize: '1.9rem', marginBottom: '14px', fontFamily: 'var(--font-serif)', color: 'var(--text)' }}>
+              Lista de Presentes de Casamento
+            </h3>
+            <p style={{ maxWidth: '640px', margin: '0 auto 28px', color: 'var(--muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
+              Selecionamos com muito amor cada item da nossa cozinha e decoração (utensílios práticos, panos de prato, jogos de potes herméticos, descansos de panela, organizadores de gaveta e itens de mesa posta) disponíveis na Shopee.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
+              <Link to="/presentes" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1.05rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
+                <Gift size={20} /> Ver Lista Completa de Presentes
+              </Link>
             </div>
           </div>
         </div>
@@ -366,12 +396,26 @@ const Home: React.FC = () => {
                 <form className="form-grid" onSubmit={handleRsvpSubmit}>
                   <div className="form-group full">
                     <label htmlFor="name">Nome Completo</label>
-                    <input type="text" id="name" placeholder="Ex: Ana Maria Silva" required />
+                    <input 
+                      type="text" 
+                      id="name" 
+                      placeholder="Ex: Ana Maria Silva" 
+                      required 
+                      value={rsvpForm.name}
+                      onChange={(e) => setRsvpForm(prev => ({ ...prev, name: e.target.value }))}
+                    />
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="phone">WhatsApp</label>
-                    <input type="tel" id="phone" placeholder="(11) 99999-9999" required />
+                    <label htmlFor="phone">WhatsApp (com DDD)</label>
+                    <input 
+                      type="tel" 
+                      id="phone" 
+                      placeholder="(61) 99999-9999" 
+                      required 
+                      value={rsvpForm.phone}
+                      onChange={(e) => setRsvpForm(prev => ({ ...prev, phone: e.target.value }))}
+                    />
                   </div>
 
                   <div className="form-group">
@@ -379,6 +423,7 @@ const Home: React.FC = () => {
                     <select 
                       id="attending" 
                       required 
+                      value={isAttending ? 'sim' : 'nao'}
                       onChange={(e) => setIsAttending(e.target.value === 'sim')}
                     >
                       <option value="sim">Sim, estarei lá!</option>
@@ -449,22 +494,53 @@ const Home: React.FC = () => {
                     </div>
                   )}
 
-                  <div className={isAttending ? "form-group" : "form-group full"}>
-                    <label htmlFor="diet">Restrição Alimentar? (Opcional)</label>
-                    <input type="text" id="diet" placeholder="Ex: Vegano, Alérgico..." />
-                  </div>
+                  {isAttending && (
+                    <div className="form-group full">
+                      <label htmlFor="diet">Restrição Alimentar? (Opcional)</label>
+                      <input 
+                        type="text" 
+                        id="diet" 
+                        placeholder="Ex: Vegano, Alérgico a glúten..." 
+                        value={rsvpForm.diet}
+                        onChange={(e) => setRsvpForm(prev => ({ ...prev, diet: e.target.value }))}
+                      />
+                    </div>
+                  )}
 
                   <div className="form-group full">
-                    <label htmlFor="msg">Mensagem para os Noivos</label>
-                    <textarea id="msg" rows={4} placeholder="Deixe um recado carinhoso..."></textarea>
+                    <label htmlFor="msg">Mensagem para os Noivos (Opcional)</label>
+                    <textarea 
+                      id="msg" 
+                      rows={4} 
+                      placeholder="Deixe um recado carinhoso para Lidiane e Pedro..."
+                      value={rsvpForm.message}
+                      onChange={(e) => setRsvpForm(prev => ({ ...prev, message: e.target.value }))}
+                    ></textarea>
                   </div>
 
                   <div className="privacy-disclaimer full">
                     <Lock size={14} /> Seus dados estão seguros e serão usados apenas para a lista de convidados.
                   </div>
 
-                  <button type="submit" className="btn btn-primary full" style={{ gridColumn: 'span 2' }}>
-                    Confirmar Agora
+                  {rsvpError && (
+                    <div className="full" style={{ color: '#d32f2f', background: '#ffebee', padding: '12px 16px', borderRadius: '8px', fontSize: '0.9rem' }}>
+                      {rsvpError}
+                    </div>
+                  )}
+
+                  <button 
+                    type="submit" 
+                    className="btn btn-primary full" 
+                    style={{ gridColumn: 'span 2', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}
+                    disabled={rsvpLoading}
+                  >
+                    {rsvpLoading ? (
+                      <>
+                        <Loader2 size={18} className="spin" /> Gravando Confirmação...
+                      </>
+                    ) : (
+                      'Confirmar Agora'
+                    )}
                   </button>
                 </form>
               </>
@@ -485,7 +561,12 @@ const Home: React.FC = () => {
                 <button 
                   className="btn btn-outline" 
                   style={{ marginTop: '30px' }} 
-                  onClick={() => setRsvpSubmitted(false)}
+                  onClick={() => {
+                    setRsvpSubmitted(false);
+                    setRsvpForm({ name: '', phone: '', diet: '', message: '' });
+                    setAdults(0);
+                    setChildren(0);
+                  }}
                 >
                   Voltar
                 </button>
@@ -504,12 +585,16 @@ const Home: React.FC = () => {
           <div className="social-links">
             <a href={WEDDING_DATA.links.instagram} target="_blank" rel="noreferrer" className="social-circle" aria-label="Instagram"><Camera size={20} /></a>
             <a href="#" className="social-circle" aria-label="Heart"><Heart size={20} /></a>
-            <a href={`https://wa.me/5511999999999`} target="_blank" rel="noreferrer" className="social-circle" aria-label="WhatsApp"><Smartphone size={20} /></a>
           </div>
 
           <div className="copyright">
             <p>Criado com carinho para o nosso grande dia.</p>
             <p>&copy; 2026 • Todos os direitos reservados</p>
+            <p style={{ marginTop: '10px' }}>
+              <Link to="/confirmados" style={{ color: 'var(--olive)', fontSize: '0.8rem', textDecoration: 'underline' }}>
+                Ver Lista de Convidados Confirmados
+              </Link>
+            </p>
           </div>
         </div>
       </footer>
@@ -558,7 +643,10 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/album" element={<AlbumPage />} />
-        {/* Redirecionar /album-digital antigo para o novo /album se necessário, ou apenas deixar as rotas assim */}
+        <Route path="/presentes" element={<GiftsPage />} />
+        <Route path="/lista-de-presentes" element={<GiftsPage />} />
+        <Route path="/confirmados" element={<ConfirmedGuestsPage />} />
+        <Route path="/lista-confirmados" element={<ConfirmedGuestsPage />} />
       </Routes>
     </Router>
   );

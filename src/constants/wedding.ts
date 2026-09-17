@@ -13,10 +13,7 @@ export const WEDDING_DATA = {
     googleCalendarUrl: "https://calendar.google.com/calendar/render?action=TEMPLATE&text=Casamento+Lidiane+e+Pedro+Henrique&dates=20270424T190000Z/20270424T230000Z&details=Celebração+do+nosso+casamento&location=Chácara+Só+Evento",
   },
   links: {
-    giftList: "https://lista.exemplo.com",
-    honeymoonCotas: "https://cotas.exemplo.com",
-    pixKey: "000.000.000-00",
-    pixName: "Lidiane",
+    giftList: "/presentes",
     instagram: "https://instagram.com/pedroelidiane",
   },
   rsvpDeadline: "24 de Março de 2027",
