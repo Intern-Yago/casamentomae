@@ -510,7 +510,7 @@ const GiftsPage: React.FC = () => {
             Lista de Presentes do Chá de Panela
           </h1>
           <p style={{ fontSize: '1.1rem', color: 'var(--muted)', lineHeight: '1.7', marginBottom: '20px' }}>
-            Cada detalhe foi escolhido com muito carinho para equipar a nossa cozinha e montar o nosso novo cantinho! Sua presença é o nosso maior presente, mas se quiser nos mimar com um item especial, selecionamos essas opções na Shopee com fotos reais.
+            Selecionamos com muito amor, cada item para equipar a nossa casa, diretamente na Shopee com fotos reais. Não significa que tenham que escolher de lá, foi apenas uma opção para facilitar. Mas também podem usar a lista como inspiração para compras em outros lugares.
           </p>
 
           {/* Guest Identity Welcome Bar */}

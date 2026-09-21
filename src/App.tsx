@@ -379,8 +379,8 @@ const Home: React.FC = () => {
             <h3 style={{ fontSize: '1.9rem', marginBottom: '14px', fontFamily: 'var(--font-serif)', color: 'var(--text)' }}>
               Presentes do Chá de Panela
             </h3>
-            <p style={{ maxWidth: '640px', margin: '0 auto 28px', color: 'var(--muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
-              Selecionamos com muito amor cada item para equipar a nossa cozinha (jogos de copos, taças, xícaras, utensílios práticos, panos de prato, potes herméticos e organizadores de gaveta) diretamente na Shopee com fotos reais.
+            <p style={{ maxWidth: '680px', margin: '0 auto 28px', color: 'var(--muted)', fontSize: '1.05rem', lineHeight: '1.7' }}>
+              Selecionamos com muito amor, cada item para equipar a nossa casa, diretamente na Shopee com fotos reais. Não significa que tenham que escolher de lá, foi apenas uma opção para facilitar. Mas também podem usar a lista como inspiração para compras em outros lugares.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
               <Link to="/presentes" className="btn btn-primary" style={{ padding: '14px 36px', fontSize: '1.05rem', display: 'inline-flex', alignItems: 'center', gap: '10px' }}>
