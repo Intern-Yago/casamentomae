@@ -76,7 +76,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/AUu3uXyEel",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/9c5b3e7a06f075adfa5718e0ca8de76a",
     "highlight": false
   },
   {
@@ -85,7 +85,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/7Kx28pPKQJ",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8258r-msq54u7cxudgc1",
     "highlight": false
   },
   {
@@ -95,15 +95,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/4qFhAPHGuq",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820lt-mm2fcui6169yc5",
-    "highlight": false
-  },
-  {
-    "id": "fouet-01",
-    "title": "Kit Batedor Fouet Profissional De Ovos e Massas Inox Utensílios Cozinha 29cm",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/1VzFCMS0j2",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m6-mrhczhf2eio777",
     "highlight": false
   },
   {
@@ -166,7 +157,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/70KBlUPLXf",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8257t-mrd0twq1oj5tc1",
     "highlight": false
   },
   {
@@ -274,7 +265,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Formas de Gelo",
     "description": "Forma prática para drinks refrescantes e momentos especiais com amigos.",
     "url": "https://s.shopee.com.br/9V1WlDR9Oo",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824h9-mpoibmhmtpfyc4",
     "highlight": false
   },
   {
@@ -310,7 +301,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/9peN9yzyq2",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823pk-monuqj9lu0oxf8",
     "highlight": false
   },
   {
@@ -319,7 +310,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/6L4UzZhhNC",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824i2-mpze1gvof5zg90",
     "highlight": false
   },
   {
@@ -346,7 +337,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Peça charmosa para compor a mesa posta e receber quem amamos com carinho.",
     "url": "https://s.shopee.com.br/3qNA14t3RB",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823qg-mpbejw20464r56",
     "highlight": false
   },
   {
@@ -661,7 +652,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Super prática para armazenar na geladeira e levar à mesa sem complicações.",
     "url": "https://s.shopee.com.br/20vX9B4bNV",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825zr-mki2olycejut4e",
     "highlight": false
   },
   {
@@ -715,7 +706,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Design geométrico arrojado para inovar na apresentação dos pratos.",
     "url": "https://s.shopee.com.br/4qFiWUMBox",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8258u-mfsj4sgm4g0871",
     "highlight": false
   },
   {
@@ -769,7 +760,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Design lúdico e delicado que encanta qualquer visita em nosso novo lar.",
     "url": "https://s.shopee.com.br/9V1Y5DDv1z",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262s-mk8icasgln2c8d",
     "highlight": true
   },
   {
@@ -796,7 +787,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Resistente, antibacteriana natural e ideal para cortar carnes, legumes e temperos.",
     "url": "https://s.shopee.com.br/2gBDwk6duS",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-82582-ms7xvx43uj9h3f",
     "highlight": true
   },
   {
@@ -805,7 +796,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Não desgasta as facas, super fácil de higienizar e não absorve odores de alimentos.",
     "url": "https://s.shopee.com.br/AUu5HAc0va",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8258x-mru3b6innr45e3",
     "highlight": false
   },
   {
@@ -814,7 +805,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Organização e segurança para evitar contaminação cruzada entre carnes e vegetais.",
     "url": "https://s.shopee.com.br/6L4WJWeGz6",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823pt-mp83ddzmj7rf91",
     "highlight": false
   },
   {
@@ -850,7 +841,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Direto do forno para a mesa: perfeita para lasanhas, assados e pratos especiais.",
     "url": "https://s.shopee.com.br/6fhMiLpQ6F",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8260g-mlhp1sdna4g3de",
     "highlight": true
   },
   {
@@ -895,7 +886,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Acabamento moderno e minimalista que combina com a nossa paleta de decoração.",
     "url": "https://s.shopee.com.br/LnJAosxzT",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821df-mh6ox5hs44jzd6",
     "highlight": true
   },
   {
@@ -922,7 +913,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Perfeita para fazer tortas de maçã e quiches com bordas crocantes e perfeitas.",
     "url": "https://s.shopee.com.br/1gIglMCPHm",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259u-mrugeuu67yfa7d",
     "highlight": false
   },
   {
@@ -994,7 +985,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Potes & Mantimentos",
     "description": "Vidro borossilicato puro que vai ao freezer, micro-ondas e lava-louças com segurança.",
     "url": "https://s.shopee.com.br/112zyPU0X1",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821es-mh8ae7br5pmw2e",
     "highlight": true
   },
   {
@@ -1012,7 +1003,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Potes & Mantimentos",
     "description": "Protege os ovos com tampa plana que permite empilhar outros itens por cima.",
     "url": "https://s.shopee.com.br/112zyTFGHr",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821eq-mh0tvcgi45qh3a",
     "highlight": false
   },
   {
@@ -1048,7 +1039,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Elegância minimalista para almoços modernos e práticos com acabamento premium.",
     "url": "https://s.shopee.com.br/W6jNjYihn",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8257v-mriveqf4ulfqcd",
     "highlight": false
   },
   {
@@ -1057,7 +1048,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Artesanato autêntico para trazer o calor e acolhimento da natureza para a nossa casa.",
     "url": "https://s.shopee.com.br/8AWAVr93Yc",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/br-11134201-23030-1q0zbscbziov57",
     "highlight": false
   },
   {
@@ -1066,7 +1057,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Base essencial para proteger a toalha e estruturar pratos com imponência e requinte.",
     "url": "https://s.shopee.com.br/1ASmsdL40",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259v-mt01ke8nal1cb5",
     "highlight": true
   },
   {
@@ -1084,7 +1075,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Um detalhe romântico e afetivo no cantinho do café da nossa cozinha nova.",
     "url": "https://s.shopee.com.br/5LBz8kv5LN",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rccf-lshgok8theif60",
     "highlight": false
   },
   {
@@ -1093,7 +1084,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Harmoniza perfeitamente com jogos de xícaras finas para receber as visitas.",
     "url": "https://s.shopee.com.br/70KD7pb4JP",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825aq-mswtgs9l60at6c",
     "highlight": false
   },
   {
@@ -1102,7 +1093,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Durabilidade extrema, prático de usar com apenas uma mão e super resistente.",
     "url": "https://s.shopee.com.br/3B7UYoSmpQ",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
     "highlight": false
   },
   {
@@ -1120,7 +1111,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Transparência cristalina para acompanhar a quantidade de manteiga à mesa.",
     "url": "https://s.shopee.com.br/gQ9aFFUt2",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rd3y-m7vfodhuvjv1a1",
     "highlight": false
   },
   {
@@ -1237,7 +1228,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Conjunto completo com suporte organizador: não risca panelas e resiste a altas temperaturas.",
     "url": "https://s.shopee.com.br/5LBz97czkD",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7qukw-ljeh2bkwuq7p83",
     "highlight": true
   },
   {
@@ -1309,7 +1300,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Clássico luxuoso que nunca sai de moda e eleva qualquer celebração.",
     "url": "https://s.shopee.com.br/4LJRxZiOnI",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-820l6-mqxugw1mbzt264",
+    "image": "https://down-br.img.susercontent.com/file/br-11110105-6v65g-mi2070vm7toifa_cover",
     "highlight": false
   },
   {
@@ -1318,7 +1309,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Bordas generosas para valorizar massas caseiras, sopas e risotos aveludados.",
     "url": "https://s.shopee.com.br/4fwIMCXn15",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
     "highlight": false
   },
   {
@@ -1327,7 +1318,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Delicadeza para servir bolos, tortas e sobremesas no café da tarde.",
     "url": "https://s.shopee.com.br/70KD8V6pox",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825ad-mr24vmb56ku827",
     "highlight": true
   },
   {
@@ -1336,7 +1327,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Design contemporâneo com toque tátil aconchegante para as refeições diárias.",
     "url": "https://s.shopee.com.br/8V90vIe3Fk",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262g-mkntt29eqt4x88",
     "highlight": false
   },
   {
@@ -1363,7 +1354,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Toque glamouroso e moderno que transforma a composição de qualquer mesa posta.",
     "url": "https://s.shopee.com.br/1gIgmsDxr4",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
     "highlight": true
   },
   {
@@ -1453,7 +1444,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Lavanderia & Limpeza",
     "description": "Frascos elegantes com etiquetas impermeáveis para uma lavanderia de Pinterest.",
     "url": "https://s.shopee.com.br/7VGTkBPXmz",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-82606-mkwvp5yau22u59",
     "highlight": false
   },
   {
@@ -1489,7 +1480,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Lavanderia & Limpeza",
     "description": "Varrição prática sem precisar se curvar, com cerdas macias que recolhem tudo.",
     "url": "https://s.shopee.com.br/1qc706uIkW",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823om-mogud2h1qvpl4d",
     "highlight": false
   },
   {
@@ -1507,7 +1498,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Lavanderia & Limpeza",
     "description": "Fixação firme que mantém a lavanderia sempre livre, organizada e desimpedida.",
     "url": "https://s.shopee.com.br/8plrL2sVGL",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262h-mlflsm5rg2ki33",
     "highlight": true
   },
   {
@@ -1525,7 +1516,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Mantém a bebida bem quentinha com um design escandinavo lindo para a mesa.",
     "url": "https://s.shopee.com.br/5AsYyRY65j",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
     "highlight": false
   },
   {
@@ -1561,7 +1552,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Eletroportáteis",
     "description": "Grelha rápida para sanduíches, queijo quente e lanches perfeitos no dia a dia.",
     "url": "https://s.shopee.com.br/6fhMlNaw9H",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
     "highlight": false
   },
   {
@@ -1606,7 +1597,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Decoração & Casa",
     "description": "Dá as boas-vindas com carinho e proteção logo na porta de entrada da casa nova.",
     "url": "https://s.shopee.com.br/4LJRzKHpWS",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/06f1c67e4a26507cc467c54ae240210a",
     "highlight": false
   },
   {
@@ -1615,7 +1606,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Decoração & Casa",
     "description": "Padronagem elegante que moderniza os ambientes e pode ser lavado facilmente.",
     "url": "https://s.shopee.com.br/8plrLdqkyL",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/f3089ba0053f0e494a916043e2b3797f",
     "highlight": false
   },
   {
@@ -1624,7 +1615,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Decoração & Casa",
     "description": "Charme artesanal perfeito para corredores, beira de cama ou varanda.",
     "url": "https://s.shopee.com.br/50Z8mbw98B",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7qukw-ljvgusriwiar31",
     "highlight": true
   },
   {
@@ -1642,7 +1633,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Cama & Banho",
     "description": "Traz textura rica e elegância sobreposta ao sofá ou aos pés da cama de casal.",
     "url": "https://s.shopee.com.br/5fopZuin1C",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-820m5-ml8a34rlu7t287",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259v-mt54xqv2pam99c",
     "highlight": false
   }
 ];

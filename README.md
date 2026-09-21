@@ -71,4 +71,10 @@ export default defineConfig([
   },
 ])
 ```
-"# casamentomae" 
+# Casamento & Chá de Panela
+
+Site oficial do Casamento & Chá de Panela com lista de presentes interativa, confirmação de presença (RSVP), dicas e história do casal.
+
+## Lista de Presentes & Regras de Imagens
+- O catálogo de presentes encontra-se em `src/constants/gifts.ts`.
+- **Regras de Fotos Reais da Shopee:** Para produtos cuja primeira imagem de capa contém selos ou molduras promocionais da Shopee, deve-se utilizar a segunda imagem da galeria. A relação completa dos 50 itens configurados com a segunda imagem está documentada em [`GIFTS_IMAGE_RULES.md`](./GIFTS_IMAGE_RULES.md).
