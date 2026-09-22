@@ -620,15 +620,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "saladeira-03",
-    "title": "Tigela Bowl Saladeira Redonda Culinária Em Aço Inox 4,5l 30cm unda Multiuso Bacia Saladeira",
-    "category": "Mesa & Servir",
-    "description": "Material nobre e sustentável que confere um visual rústico e acolhedor.",
-    "url": "https://s.shopee.com.br/4B01j6xZ5X",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-820lt-mqy3o1ddbv9gb7",
-    "highlight": false
-  },
-  {
     "id": "saladeira-04",
     "title": "Conjunto Travessa Saladeira Baixelas Para Servir Ryo Maresia Areia Oxford Porcelanas",
     "category": "Mesa & Servir",
@@ -773,15 +764,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "petisqueira-07",
-    "title": "Kit Petisco 2 Petisqueiras + 4 Mini Petisqueiras Ratinho",
-    "category": "Mesa & Servir",
-    "description": "Acabamento artesanal impecável que une rusticidade e bom gosto à bancada.",
-    "url": "https://s.shopee.com.br/4fwIKNQdex",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfkq-md3e6ct0a41t1c_cover",
-    "highlight": false
-  },
-  {
     "id": "tabua-corte-01",
     "title": "Lanju Shiyou Tábua de corte Tábua de corte Tábua de corte de bambu doméstica Tábua de corte espessada Tábua de cortar al",
     "category": "Utensílios de Cozinha",
@@ -843,15 +825,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/6fhMiLpQ6F",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-8260g-mlhp1sdna4g3de",
     "highlight": true
-  },
-  {
-    "id": "travessa-02",
-    "title": "3 Kits de Travessa Acrílica Oval- Travessas Para Servir- Saladeira Acrílico, Travessa de Acrílico, Saladeira Acrílico",
-    "category": "Mesa & Servir",
-    "description": "Visual clean e clássico que mantém a comida quentinha durante toda a refeição.",
-    "url": "https://s.shopee.com.br/905HUebb0K",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mf14bk6txm9zea",
-    "highlight": false
   },
   {
     "id": "travessa-03",
@@ -1034,15 +1007,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "jogo-americano-03",
-    "title": "Jogos Americanos Ovais, Tapete De Mesa De Couro Com Impressão Em Corrente , Jogo Americano Impermeável Limpáve",
-    "category": "Mesa & Servir",
-    "description": "Elegância minimalista para almoços modernos e práticos com acabamento premium.",
-    "url": "https://s.shopee.com.br/W6jNjYihn",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8257v-mriveqf4ulfqcd",
-    "highlight": false
-  },
-  {
     "id": "jogo-americano-04",
     "title": "Kit jogo americano 8, 12, 16, 20 e 24 Peças - Sousplat e Guardanapo - Mesa Posta - Decoração Branco com Folhas.",
     "category": "Mesa & Servir",
@@ -1059,42 +1023,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/1ASmsdL40",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259v-mt01ke8nal1cb5",
     "highlight": true
-  },
-  {
-    "id": "acucareiro-01",
-    "title": "Açucareiro Cerâmica Açucareiro Com Colher Acucareiro Pote Para Açúcar Com Tampa e Colher",
-    "category": "Mesa & Servir",
-    "description": "Peça delicada e cheia de charme para adoçar nossos momentos e o café da manhã.",
-    "url": "https://s.shopee.com.br/5AsYwQVnI8",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lr-mrkt88l4x2pz6a",
-    "highlight": true
-  },
-  {
-    "id": "acucareiro-02",
-    "title": "Açucareiro Bambu com Colher 8x6,5cm Açucareiro Bambu com Colher 8x6,5cm",
-    "category": "Mesa & Servir",
-    "description": "Um detalhe romântico e afetivo no cantinho do café da nossa cozinha nova.",
-    "url": "https://s.shopee.com.br/5LBz8kv5LN",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rccf-lshgok8theif60",
-    "highlight": false
-  },
-  {
-    "id": "acucareiro-03",
-    "title": "Açucareiro de aço inoxidável 304, equipado com tampa e colher de vidro transparente, açucareiro dourado, capacidade 10 o",
-    "category": "Mesa & Servir",
-    "description": "Harmoniza perfeitamente com jogos de xícaras finas para receber as visitas.",
-    "url": "https://s.shopee.com.br/70KD7pb4JP",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825aq-mswtgs9l60at6c",
-    "highlight": false
-  },
-  {
-    "id": "acucareiro-04",
-    "title": "Açucareiro de Cerâmica com Colher e Tampa de Bambu",
-    "category": "Mesa & Servir",
-    "description": "Durabilidade extrema, prático de usar com apenas uma mão e super resistente.",
-    "url": "https://s.shopee.com.br/3B7UYoSmpQ",
-    "image": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
-    "highlight": false
   },
   {
     "id": "manteigueira-01",
@@ -1184,15 +1112,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Práticos para preparar massas, bater bolos e guardar na geladeira com tampa.",
     "url": "https://s.shopee.com.br/AAHEtu0x2s",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m31swhueql8z45",
-    "highlight": false
-  },
-  {
-    "id": "bowl-04",
-    "title": "Tigela tones Ecological Bamboo Bowl KIT Dessert Bowl Small Food Bowl 500ml 13,5 cm x 7 cm",
-    "category": "Mesa & Servir",
-    "description": "Traz textura e beleza sustentável para as noites de cinema e petiscos.",
-    "url": "https://s.shopee.com.br/2VrnlpPTJS",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ln-mt6n34p8p7uua6",
     "highlight": false
   },
   {
@@ -1367,15 +1286,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": true
   },
   {
-    "id": "frigideira-02",
-    "title": "novo:Frigideira Antiaderente Bichinho/Mini Frigideira Antiaderente Bichinhos",
-    "category": "Utensílios de Cozinha",
-    "description": "Espaço de sobra para preparar legumes salteados, yakissoba e risotos deliciosos.",
-    "url": "https://s.shopee.com.br/5fopYMzV7r",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rce1-lte0xd3i0z6u1f",
-    "highlight": false
-  },
-  {
     "id": "jogo-toalhas-01",
     "title": "Jogo de Toalhas 4 peças - 100% Algodão, Toalha Grande 70x140cm",
     "category": "Cama & Banho",
@@ -1517,15 +1427,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Mantém a bebida bem quentinha com um design escandinavo lindo para a mesa.",
     "url": "https://s.shopee.com.br/5AsYyRY65j",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
-    "highlight": false
-  },
-  {
-    "id": "cafe-cha-03",
-    "title": "Chaleira de Vidro Fume 1L com Coador Tampa de Bambu Premium Bule infusor Resistente a Calor e Fogo -20 ~ 150",
-    "category": "Mesa & Servir",
-    "description": "Permite acompanhar a infusão de chás florais e ervas com beleza visual e aroma.",
-    "url": "https://s.shopee.com.br/50Z8m9POIU",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-man3asno1bll40",
     "highlight": false
   },
   {

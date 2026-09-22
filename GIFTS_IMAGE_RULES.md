@@ -12,12 +12,8 @@ Alguns vendedores na Shopee utilizam molduras, selos promocionais ou banners de 
 | # | ID / Título | URL Shopee | Imagem Utilizada (2ª Foto) |
 |---|---|---|---|
 | 1 | `colheres-medidoras-01` (Jogo de Colheres Medidoras) | https://s.shopee.com.br/4qFhBFifDm | `sg-11134201-824gg-mdw4cahb6ex2eb` (Foto limpa sem selo) |
-| 2 | `jarra-08` (Jarra com Tampa) | https://s.shopee.com.br/5LBz8kv5LN | `sg-11134201-7rcct-lshgoi7ug7b870` |
-| 3 | `travessa-06` (Travessa) | https://s.shopee.com.br/70KD7pb4JP | `sg-11134201-8260a-mlhp1rc368u75c` |
-| 4 | `acucareiro-04` (Açucareiro Cerâmica) | https://s.shopee.com.br/3B7UYoSmpQ | `95d849253f75d5e6e6b867af4f7c65aa` |
 | 5 | `bowl-02` (Bowl Cerâmica) | https://s.shopee.com.br/4qFiWUMBox | `sg-11134201-8261e-mki2ok15e3ep31` |
 | 6 | `organizador-03` (Caixa Organizadora Talheres) | https://s.shopee.com.br/9peN9yzyq2 | `sg-11134201-823q1-monuqj8rbklqe8` |
-| 7 | `travessa-04` (Kit Assadeiras Opaline) | https://s.shopee.com.br/50Z8m9POIU | `br-11134207-820l5-mqgf4j7113ch83` |
 | 8 | `cafe-cha-02` (Chaleira em Vidro com Infusor) | https://s.shopee.com.br/5AsYyRY65j | `sg-11134201-23020-izcu3307pzmv21` (Foto real da chaleira) |
 | 9 | `forma-gelo-01` (Conjunto Formas de Gelo) | https://s.shopee.com.br/9V1WlDR9Oo | `sg-11134201-824i2-mpoiblmo5b7x52` |
 | 10 | `tabua-frios-01` (Tábua para Frios) | https://s.shopee.com.br/1LfqMade3U | `br-11134207-820l5-mnepii6g4g9h37` |
@@ -33,7 +29,6 @@ Alguns vendedores na Shopee utilizam molduras, selos promocionais ou banners de 
 | 20 | `saladeira-12` (Tigela Canelada Bambu) | https://s.shopee.com.br/4fwIMCXn15 | `sg-11134201-7rfhq-m97we2patn69f2` |
 | 21 | `faqueiro-02` (Faqueiro Inox) | https://s.shopee.com.br/1gIgmsDxr4 | `95d849253f75d5e6e6b867af4f7c65aa` |
 | 22 | `travessa-01` (Jogo Travessas Ovais) | https://s.shopee.com.br/6fhMiLpQ6F | `sg-11134201-8260g-mlhp1sdna4g3de` |
-| 23 | `manteigueira-05` (Manteigueira Francesa) | https://s.shopee.com.br/W6jNjYihn | `sg-11134201-8257v-mriveqf4ulfqcd` |
 | 24 | `bowl-07` (Kit Bowls Cerâmica) | https://s.shopee.com.br/2qUeATnaRq | `br-11110105-6v7ox-msfovvipe5frdb_cover` |
 | 25 | `limpeza-01` (Kit Borrifador Multiuso) | https://s.shopee.com.br/6L4WMKMmc0 | `sg-11134201-8259b-meu0lpsx962p0b` (Foto 2 sem selo promocional) |
 | 26 | `jogo-americano-04` (Jogo Americano) | https://s.shopee.com.br/112zyTFGHr | `sg-11134201-821eq-mh0tvcgi45qh3a` |
@@ -67,5 +62,4 @@ Alguns vendedores na Shopee utilizam molduras, selos promocionais ou banners de 
 ## Produto Removido
 - `fouet-01` (`https://s.shopee.com.br/1VzFCMS0j2`) — Removido da lista a pedido dos noivos.
 
-| 51 | `frigideira-02` (Frigideira Antiaderente Bichinho) | https://s.shopee.com.br/5fopYMzV7r | `sg-11134201-7rce1-lte0xd3i0z6u1f` (Foto 2 limpa) |
 | 52 | `organizador-05` (Porta Talheres Bambu) | https://s.shopee.com.br/7fZsa4OLj1 | `sg-11134201-7rd6o-lw8puhmcjdwr37` (Foto 2 limpa) |
