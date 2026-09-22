@@ -26,7 +26,6 @@ Alguns vendedores na Shopee utilizam molduras, selos promocionais ou banners de 
 | 17 | `jogo-americano-03` (Jogo Americano) | https://s.shopee.com.br/8V90vIe3Fk | `sg-11134201-82618-mlj5b5a2r1lpa9` |
 | 18 | `pratos-02` (Jogo de Pratos) | https://s.shopee.com.br/4LJRxZiOnI | `sg-11134201-82613-mkcsqg8s3j0162` |
 | 19 | `assadeira-03` (Forma Assadeira Biscoito) | https://s.shopee.com.br/70KD8V6pox | `sg-11134201-8261q-mk4k35x174vhf2` |
-| 20 | `saladeira-12` (Tigela Canelada Bambu) | https://s.shopee.com.br/4fwIMCXn15 | `sg-11134201-7rfhq-m97we2patn69f2` |
 | 21 | `faqueiro-02` (Faqueiro Inox) | https://s.shopee.com.br/1gIgmsDxr4 | `95d849253f75d5e6e6b867af4f7c65aa` |
 | 22 | `travessa-01` (Jogo Travessas Ovais) | https://s.shopee.com.br/6fhMiLpQ6F | `sg-11134201-8260g-mlhp1sdna4g3de` |
 | 24 | `bowl-07` (Kit Bowls Cerâmica) | https://s.shopee.com.br/2qUeATnaRq | `br-11110105-6v7ox-msfovvipe5frdb_cover` |

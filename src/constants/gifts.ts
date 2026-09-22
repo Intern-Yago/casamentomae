@@ -1223,15 +1223,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "jogo-pratos-03",
-    "title": "Jogo 6 Pratos Sobremesa 19cm Abelinha Honey Bee Hauskraft - (JOGO 6 PRATOS) ***",
-    "category": "Mesa & Servir",
-    "description": "Bordas generosas para valorizar massas caseiras, sopas e risotos aveludados.",
-    "url": "https://s.shopee.com.br/4fwIMCXn15",
-    "image": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
-    "highlight": false
-  },
-  {
     "id": "jogo-pratos-04",
     "title": "Jogo 6 Pratos Sobremesa 17,5cm Turim Hauskraft - (JOGO 6 PRATOS) ***",
     "category": "Mesa & Servir",
