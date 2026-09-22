@@ -4,7 +4,7 @@
     "shopId": "794358083",
     "itemId": "22698158954",
     "firstImage": "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
-    "secondImage": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-m85nc6uod4414c_cover",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
     "all": [
       "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
       "https://down-br.img.susercontent.com/file/br-11110105-6kfko-m85nc6uod4414c_cover",
@@ -109,7 +109,7 @@
     "shopId": "287762298",
     "itemId": "22520978726",
     "firstImage": "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
-    "secondImage": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
     "all": [
       "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
       "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
@@ -364,7 +364,7 @@
     "shopId": "1326016503",
     "itemId": "23494418365",
     "firstImage": "https://down-br.img.susercontent.com/file/sg-11134201-8258v-meu0lojiaxvod5",
-    "secondImage": "https://down-br.img.susercontent.com/file/br-11110105-6v5dn-meu0qlk7uvwi56_cover",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-8259b-meu0lpsx962p0b",
     "all": [
       "https://down-br.img.susercontent.com/file/sg-11134201-8258v-meu0lojiaxvod5",
       "https://down-br.img.susercontent.com/file/br-11110105-6v5dn-meu0qlk7uvwi56_cover",
@@ -589,7 +589,7 @@
     "shopId": "813220553",
     "itemId": "23398288138",
     "firstImage": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
-    "secondImage": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
+    "secondImage": "https://down-br.img.susercontent.com/file/br-11134207-820ma-mlzpcz5d0mpy45",
     "all": [
       "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
       "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
@@ -649,7 +649,7 @@
     "shopId": "444300037",
     "itemId": "22493253574",
     "firstImage": "https://down-br.img.susercontent.com/file/sg-11134201-7rdvj-lzjd4txzcp87e3",
-    "secondImage": "https://down-br.img.susercontent.com/file/br-11110105-7r98o-lzktftaqs0o853",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-7rdxq-lzjd4v63ljnb10",
     "all": [
       "https://down-br.img.susercontent.com/file/sg-11134201-7rdvj-lzjd4txzcp87e3",
       "https://down-br.img.susercontent.com/file/br-11110105-7r98o-lzktftaqs0o853",
@@ -748,5 +748,13 @@
       "https://down-br.img.susercontent.com/file/sg-11134201-7rfgo-m97we2pkrulef9",
       "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372"
     ]
+  },
+  "https://s.shopee.com.br/5fopYMzV7r": {
+    "url": "https://s.shopee.com.br/5fopYMzV7r",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-7rce1-lte0xd3i0z6u1f"
+  },
+  "https://s.shopee.com.br/7fZsa4OLj1": {
+    "url": "https://s.shopee.com.br/7fZsa4OLj1",
+    "secondImage": "https://down-br.img.susercontent.com/file/sg-11134201-7rd6o-lw8puhmcjdwr37"
   }
 }

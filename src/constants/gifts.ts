@@ -139,7 +139,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/4qFhBFifDm",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-m85nc6uod4414c_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
     "highlight": false
   },
   {
@@ -319,7 +319,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/7fZsa4OLj1",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rd6o-lw8puhmcjdwr37",
     "highlight": false
   },
   {
@@ -832,7 +832,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Praticidade total com faquinhas especiais guardadas dentro da própria tábua.",
     "url": "https://s.shopee.com.br/4fwIKd2iKQ",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-7r98o-lzktftaqs0o853",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rdxq-lzjd4v63ljnb10",
     "highlight": true
   },
   {
@@ -1372,7 +1372,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Utensílios de Cozinha",
     "description": "Espaço de sobra para preparar legumes salteados, yakissoba e risotos deliciosos.",
     "url": "https://s.shopee.com.br/5fopYMzV7r",
-    "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rce1-lte0xd3i0z6u1f",
     "highlight": false
   },
   {
@@ -1435,7 +1435,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Lavanderia & Limpeza",
     "description": "Limpeza rápida e sem esforço, sem precisar molhar ou torcer panos com as mãos.",
     "url": "https://s.shopee.com.br/6L4WMKMmc0",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6v5dn-meu0qlk7uvwi56_cover",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259b-meu0lpsx962p0b",
     "highlight": true
   },
   {
@@ -1516,7 +1516,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Mesa & Servir",
     "description": "Mantém a bebida bem quentinha com um design escandinavo lindo para a mesa.",
     "url": "https://s.shopee.com.br/5AsYyRY65j",
-    "image": "https://down-br.img.susercontent.com/file/a65c5d1c5e556c6197f8fbd607482372",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
     "highlight": false
   },
   {
@@ -1552,7 +1552,7 @@ export const GIFTS_DATA: GiftItem[] = [
     "category": "Eletroportáteis",
     "description": "Grelha rápida para sanduíches, queijo quente e lanches perfeitos no dia a dia.",
     "url": "https://s.shopee.com.br/6fhMlNaw9H",
-    "image": "https://down-br.img.susercontent.com/file/95d849253f75d5e6e6b867af4f7c65aa",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ma-mlzpcz5d0mpy45",
     "highlight": false
   },
   {
