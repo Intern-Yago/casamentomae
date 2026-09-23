@@ -20,8 +20,7 @@ export const GIFT_CATEGORIES = [
   "Decoração & Casa",
   "Lavanderia & Limpeza",
   "Eletroportáteis",
-  "Descanso de Panela",
-  "Formas de Gelo"
+  "Descanso de Panela"
 ] as const;
 
 export const GIFTS_DATA: GiftItem[] = [
@@ -95,15 +94,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/AKadj5haO0",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztw-mklew7e4mlts76",
-    "highlight": false
-  },
-  {
-    "id": "colher-pau-01",
-    "title": "Colher de Pau Madeira Premium kit com 4 colheres",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/9AOgKfFZYD",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lc-mmug9z1vvitc9e",
     "highlight": false
   },
   {
@@ -206,30 +196,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "forma-gelo-02",
-    "title": "14 formas de gelo, forma quadrada para gelo com tampa, forma de gelo de silicone com fundo macio, forma de gelo fácil",
-    "category": "Formas de Gelo",
-    "description": "Forma prática para drinks refrescantes e momentos especiais com amigos.",
-    "url": "https://s.shopee.com.br/6q0laNIMWs",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-maa4z8o7cn1y2f",
-    "highlight": false
-  },
-  {
     "id": "organizador-02",
     "title": "Porta Talheres de Sisal Wolff 15x20cm Organizador de Mesa Posta Rustico Cesto Boho Chic Decoração Casa Cozinha Elegante",
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/4B00PYHcyH",
     "image": "https://down-br.img.susercontent.com/file/br-11110105-6v6x6-msa4yolc00sl63_cover",
-    "highlight": false
-  },
-  {
-    "id": "organizador-03",
-    "title": "Caixa de armazenamento de talheres de madeira caixa organizador de talheres de cozinha caixa de armazenamento de mesa su",
-    "category": "Organizadores",
-    "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
-    "url": "https://s.shopee.com.br/9peN9yzyq2",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823pk-monuqj9lu0oxf8",
     "highlight": false
   },
   {
@@ -377,15 +349,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "xicaras-06",
-    "title": "JOGO DE XÍCARAS COM PIRES 12 PEÇAS - 6 PIRES - 6 XÍCARAS 200ML ACRÍLICO COR PRETO PARA CHÁ/CAFÉ",
-    "category": "Copos, Taças & Xícaras",
-    "description": "Para aquele cafezinho aconchegante da manhã e da tarde no nosso novo lar.",
-    "url": "https://s.shopee.com.br/8fSPnShMLC",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m9ewbixtoyt534",
-    "highlight": false
-  },
-  {
     "id": "xicaras-07",
     "title": "Jogo 12 Peças Xícaras de Café Vidro 150ml com Borda Dourada Estilo Retro Luxuoso 6 Xícaras + 6 Pires",
     "category": "Copos, Taças & Xícaras",
@@ -393,15 +356,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/1ARTZ4kH7",
     "image": "https://down-br.img.susercontent.com/file/sg-11110106-6vasv-mr0h4t5ufnrg40_cover",
     "highlight": true
-  },
-  {
-    "id": "jarra-02",
-    "title": "Jarra De Vidro 1,5 Litros Jarra Com Tampa Garrafa De Vidro Geladeira Suco Água Jarra Vidro 1500 ML",
-    "category": "Mesa & Servir",
-    "description": "Design minimalista e resistente a altas temperaturas, perfeita para bebidas quentes ou frias.",
-    "url": "https://s.shopee.com.br/4fwIJqQhW8",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ls-mnvkrfk9w3r523",
-    "highlight": false
   },
   {
     "id": "jarra-04",
@@ -447,15 +401,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/9V1Y4rn4C1",
     "image": "https://down-br.img.susercontent.com/file/br-11110107-6v6x5-mqz23leigdtyf0_cover",
     "highlight": false
-  },
-  {
-    "id": "saladeira-01",
-    "title": "Bowl Saladeira 2 Litros - Acrílico - Saladeira Média - Balde Para Pipoca",
-    "category": "Mesa & Servir",
-    "description": "Saladeira leve e funcional, excelente para o preparo e serviço de saladas frescas.",
-    "url": "https://s.shopee.com.br/1gIgkUYDi7",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ly-mr2cia29xm9x13",
-    "highlight": true
   },
   {
     "id": "saladeira-04",
@@ -575,15 +520,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": true
   },
   {
-    "id": "tabua-corte-02",
-    "title": "Tábua de corte de ébano Tábua de corte de madeira maciça doméstica Tábua de corte pegajosa de cozinha Tábua de corte ant",
-    "category": "Utensílios de Cozinha",
-    "description": "Não desgasta as facas, super fácil de higienizar e não absorve odores de alimentos.",
-    "url": "https://s.shopee.com.br/AUu5HAc0va",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8258x-mru3b6innr45e3",
-    "highlight": false
-  },
-  {
     "id": "tabua-corte-03",
     "title": "Tábua de corte espessada antibacteriana antimofo Tábua de corte doméstica Tábua de corte Tábua de corte de frutas de plá",
     "category": "Utensílios de Cozinha",
@@ -671,15 +607,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Ideal para queijo e presunto fatiados sempre protegidos e organizados na prateleira.",
     "url": "https://s.shopee.com.br/7ptK6wV8Ch",
     "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
-    "highlight": false
-  },
-  {
-    "id": "potes-geladeira-05",
-    "title": "Kit 12 Peças Potes Herméticos Organizador de Geladeira com Tampa Potes para Alimentos Frutas Cozinha",
-    "category": "Potes & Mantimentos",
-    "description": "Praticidade para puxar e visualizar iogurtes, molhos e conservas facilmente.",
-    "url": "https://s.shopee.com.br/1ASmaFwuv",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820l9-mt1ebjcpnev86c",
     "highlight": false
   },
   {
@@ -798,15 +725,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/7fZtvTx9md",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mg2bjnhwf6rk88",
     "highlight": true
-  },
-  {
-    "id": "cesto-organizador-02",
-    "title": "Cesto De Roupa Suja Bambu Dobravel Organizador Forrado Banheiro 57cm Cesto Retangular com Alça Cesto Organizador Brinquedo Quarto Banheiro",
-    "category": "Organizadores",
-    "description": "Estilo industrial moderno para despensas, frutas e bancada da cozinha.",
-    "url": "https://s.shopee.com.br/4B01l4NLVD",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltiw0trxih49ca",
-    "highlight": false
   },
   {
     "id": "cesto-organizador-03",
@@ -1007,15 +925,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "cafe-cha-01",
-    "title": "Chaleira Bule De Vidro Com Infusor de Chá Inox 450ml",
-    "category": "Mesa & Servir",
-    "description": "Extrai os óleos essenciais do café com sabor marcante e aroma irresistível.",
-    "url": "https://s.shopee.com.br/3VkKzMEF2Z",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6v65e-mgiaoffjzuh17e_cover",
-    "highlight": true
-  },
-  {
     "id": "cafe-cha-02",
     "title": "Chaleira em Vidro 750 ml com Infusor Glassy TopGet",
     "category": "Mesa & Servir",
@@ -1103,6 +1012,213 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Traz textura rica e elegância sobreposta ao sofá ou aos pés da cama de casal.",
     "url": "https://s.shopee.com.br/5fopZuin1C",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259v-mt54xqv2pam99c",
+    "highlight": false
+  },
+  {
+    "id": "talheres-black-01",
+    "title": "Conjunto De Talheres Black Em Inox 24 Peças Faqueiro De Luxo",
+    "category": "Mesa & Servir",
+    "description": "Design moderno e acabamento elegante em inox preto para mesas sofisticadas.",
+    "url": "https://br.shp.ee/d691zGeE",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-mdanvzkx95bm7b",
+    "highlight": true
+  },
+  {
+    "id": "jogo-facas-01",
+    "title": "Kit 9 Jogo De Facas Inox Suporte Giratório Retrátil Cozinha",
+    "category": "Utensílios de Cozinha",
+    "description": "Conjunto completo de alta precisão com suporte giratório para a bancada.",
+    "url": "https://br.shp.ee/iQqW4CzE",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mk2x8mh1s9hc17",
+    "highlight": true
+  },
+  {
+    "id": "talheres-marmore-01",
+    "title": "Kit 24 Talheres de Aço Inoxidável de Luxo com Padrão de Mármore",
+    "category": "Mesa & Servir",
+    "description": "Charme e requinte com cabo em padrão de mármore para jantares especiais.",
+    "url": "https://br.shp.ee/8nYnMzMn",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mkc9ang82iv462",
+    "highlight": false
+  },
+  {
+    "id": "talheres-dourado-01",
+    "title": "Conjunto de 24 Talheres de Aço Inoxidável Dourado Cintura Fina Série Deluxe",
+    "category": "Mesa & Servir",
+    "description": "Acabamento dourado impecável e design anatômico para celebrar momentos a dois.",
+    "url": "https://br.shp.ee/XeKPnJxF",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lz-msclbnbbnoqua2",
+    "highlight": true
+  },
+  {
+    "id": "torneira-gourmet-01",
+    "title": "Torneira De Cozinha Gourmet Alça Única com Extensor De Spray Tubo Flexível",
+    "category": "Utensílios de Cozinha",
+    "description": "Praticidade superior e versatilidade na pia para facilitar o preparo e limpeza.",
+    "url": "https://br.shp.ee/bqv6m81j",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262u-mjtxop93dsed0a",
+    "highlight": false
+  },
+  {
+    "id": "termometro-culinario-01",
+    "title": "Termômetro Digital Culinário de Cozinha para Carne, Churrasco e Forno",
+    "category": "Utensílios de Cozinha",
+    "description": "Precisão absoluta no ponto das carnes, assados e receitas especiais.",
+    "url": "https://br.shp.ee/sJV5w2u2",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820l7-mosu92wc7uv46c",
+    "highlight": false
+  },
+  {
+    "id": "tapioqueira-01",
+    "title": "Tapioqueira Peneira e Armazena - Polvilhador Prático Mazzal",
+    "category": "Utensílios de Cozinha",
+    "description": "Facilidade para preparar tapiocas perfeitas sem sujar o fogão.",
+    "url": "https://br.shp.ee/CSC4APB2",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-ltl2f5quiv55e1",
+    "highlight": false
+  },
+  {
+    "id": "molde-hamburguer-01",
+    "title": "Molde Para Hambúrguer Caseiro e Artesanal Forma Prensa Modeladora Alumínio",
+    "category": "Utensílios de Cozinha",
+    "description": "Hambúrgueres com formato perfeito para nossas noites gastronômicas em casa.",
+    "url": "https://br.shp.ee/pJ4572QA",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820le-msvhw5xwag3r4c",
+    "highlight": false
+  },
+  {
+    "id": "rolo-massa-01",
+    "title": "Kit Rolo de Massa Inox Giratório + Espátula Tubular Confeitaria e Massas",
+    "category": "Utensílios de Cozinha",
+    "description": "Utensílio profissional para abrir massas frescas, pizzas e pães caseiros.",
+    "url": "https://br.shp.ee/N1uAxU5p",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-mah5mx9kh0jdd1",
+    "highlight": false
+  },
+  {
+    "id": "espatula-pate-01",
+    "title": "Kit 6 Espátulas Inox Profissional Para Patês, Manteigas e Geleias",
+    "category": "Mesa & Servir",
+    "description": "Praticidade para compor tábuas de frios, cafés da manhã e entradinhas.",
+    "url": "https://br.shp.ee/BWk1Z29B",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lq-mqo8pjk2st1ca5",
+    "highlight": false
+  },
+  {
+    "id": "espatula-manteiga-dourada-01",
+    "title": "Conjunto 4 Espátulas de Aço Inox Dourado Para Manteiga e Requeijão Wolff",
+    "category": "Mesa & Servir",
+    "description": "Delicadeza e acabamento refinado para deixar a mesa posta ainda mais graciosa.",
+    "url": "https://br.shp.ee/ycxzBqCJ",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lk-mosdl74kbi12dd",
+    "highlight": false
+  },
+  {
+    "id": "spray-oleo-01",
+    "title": "Kit Spray Pulverizador Dispenser para Azeite e Óleo Culinário",
+    "category": "Utensílios de Cozinha",
+    "description": "Controle preciso no uso de azeite para saladas e frituras sem excessos.",
+    "url": "https://br.shp.ee/g6WPvrQW",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825a5-mtaaxt9k9b0l54",
+    "highlight": false
+  },
+  {
+    "id": "galheteiro-vidro-01",
+    "title": "Galheteiro Azeite e Vinagre com Suporte e Bico Dosador 3 Peças",
+    "category": "Mesa & Servir",
+    "description": "Organização e praticidade à mesa com dosagem precisa de azeite e vinagre.",
+    "url": "https://br.shp.ee/6ZX9Fv5T",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ly-msnem2ez0jye32",
+    "highlight": false
+  },
+  {
+    "id": "galheteiro-porcelana-01",
+    "title": "Kit Galheteiro em Porcelana Decorada Arabesco com Suporte",
+    "category": "Mesa & Servir",
+    "description": "Charme provençal e sofisticação em porcelana para servir à mesa.",
+    "url": "https://br.shp.ee/QxHjpmLU",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823py-mpatwv4l1uyq14",
+    "highlight": true
+  },
+  {
+    "id": "ralador-queijo-01",
+    "title": "Ralador de Queijo Manual Super Afiado Giratório em Inox",
+    "category": "Utensílios de Cozinha",
+    "description": "Ralar queijos, nozes e chocolates diretamente no prato com total facilidade.",
+    "url": "https://br.shp.ee/oZpnkcae",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m3-mnu0qlx191c2c1",
+    "highlight": false
+  },
+  {
+    "id": "moedor-eletrico-01",
+    "title": "Kit 2 Moedores Elétricos de Pimenta e Sal em Aço Inox Temperos",
+    "category": "Utensílios de Cozinha",
+    "description": "Tempero fresco e moído na hora com apenas um toque no botão.",
+    "url": "https://br.shp.ee/u6x3BttF",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820le-mopfwtodlzie3a",
+    "highlight": true
+  },
+  {
+    "id": "assadeira-inox-tampa-01",
+    "title": "Assadeira De Aço Inoxidável Com Tampa Antiderrapante",
+    "category": "Utensílios de Cozinha",
+    "description": "Versatilidade para assar, armazenar na geladeira e servir diretamente à mesa.",
+    "url": "https://br.shp.ee/ZEK7JBGN",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rdx3-mcgr3wlyrahy01",
+    "highlight": false
+  },
+  {
+    "id": "travessa-vidro-tampa-01",
+    "title": "Travessa Assadeira Redonda De Vidro Com Tampa 1,8L Forno",
+    "category": "Mesa & Servir",
+    "description": "Vidro resistente a altas temperaturas ideal para tortas, assados e sobremesas.",
+    "url": "https://br.shp.ee/kBvKqcGg",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-81zuu-mn4ipv431yiw48",
+    "highlight": false
+  },
+  {
+    "id": "travessa-ceramica-01",
+    "title": "Travessa com Revestimento Cerâmico Assadeira Antiaderente Retangular",
+    "category": "Mesa & Servir",
+    "description": "Cozimento uniforme sem grudar e acabamento refinado para ir à mesa.",
+    "url": "https://br.shp.ee/HoEG7ksJ",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820mg-mrq06fmtczk576",
+    "highlight": false
+  },
+  {
+    "id": "assadeira-lasanheira-01",
+    "title": "Assadeira Lasanheira 3,5L Retangular Com Tampa Prática",
+    "category": "Mesa & Servir",
+    "description": "Capacidade generosa para lasanhas de domingo e refeições em família.",
+    "url": "https://br.shp.ee/8zDRhwXZ",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m6-mqmfirob7r41eb",
+    "highlight": false
+  },
+  {
+    "id": "tigela-vidro-tampa-01",
+    "title": "Tigela De Vidro 800ml Com Tampa Cristalizado Transparente Micro-ondas",
+    "category": "Potes & Mantimentos",
+    "description": "Praticidade para aquecer, servir e guardar porções com vedação higiênica.",
+    "url": "https://br.shp.ee/mYjWFYa6",
+    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259s-mqyvu07qark57f",
+    "highlight": false
+  },
+  {
+    "id": "tesoura-ervas-01",
+    "title": "Tesoura para Picar Ervas, Cebolinha e Cheiro Verde em Aço Inox com 5 Lâminas",
+    "category": "Utensílios de Cozinha",
+    "description": "Corta temperos frescos com rapidez e uniformidade para realçar nossas receitas.",
+    "url": "https://br.shp.ee/QYJj19Qu",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mkii1eknhptu5f",
+    "highlight": false
+  },
+  {
+    "id": "organizador-pincel-01",
+    "title": "Organizador Giratório 360º de Mesa para Pincéis e Cosméticos com Tampa",
+    "category": "Organizadores",
+    "description": "Design gaiola elegante em acrílico para proteger e organizar pincéis na bancada.",
+    "url": "https://br.shp.ee/wTdmAFzz",
+    "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mk2ncjhgjhmr2c",
     "highlight": false
   }
 ];
