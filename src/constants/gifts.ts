@@ -89,39 +89,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "tesoura-01",
-    "title": "Tesoura de Cozinha Multiuso Premium Inox 23cm P/ Cozinha, Utensílios, Utilidade",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/4qFhAPHGuq",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lt-mm2fcui6169yc5",
-    "highlight": false
-  },
-  {
-    "id": "pegador-massa-01",
-    "title": "Kit Cozinha 3 peças Pegador Universal, Massa e Gelo Aço Inox",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/70KBkXeedj",
-    "image": "https://down-br.img.susercontent.com/file/sg-11110106-6kip0-mafzerq8o2kj5a_cover",
-    "highlight": false
-  },
-  {
     "id": "escumadeira-01",
     "title": "Kit 2 Escumadeira Aramada Escumadeira De Inox Peneira Fritura Escumadeira Para Fritura 13/17cm",
     "category": "Utensílios de Cozinha",
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/AKadj5haO0",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztw-mklew7e4mlts76",
-    "highlight": false
-  },
-  {
-    "id": "espatula-01",
-    "title": "Kit 6 /4 Espátulas Preta Pão duro de Silicone Grande Espátula flexível Espátula culinária Utensílio de cozinha",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/3LQtOBDz0z",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6lhznfwiek074",
     "highlight": false
   },
   {
@@ -140,33 +113,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
     "url": "https://s.shopee.com.br/4qFhBFifDm",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-824gg-mdw4cahb6ex2eb",
-    "highlight": false
-  },
-  {
-    "id": "peneiras-01",
-    "title": "Kit 3 Peneira Coador De Peneiras Aço Inoxidável Para Cozinha Peneira De Cozinha",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/AKadjXsTpw",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820m5-mmpd4zrv01s08f",
-    "highlight": false
-  },
-  {
-    "id": "funil-01",
-    "title": "Funil de Silicone dobrável retrátil, suprimentos de cozinha, funil grande doméstico, funil de óleo de grande diâmetro, c",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/70KBlUPLXf",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8257t-mrd0twq1oj5tc1",
-    "highlight": false
-  },
-  {
-    "id": "luvas-termicas-01",
-    "title": "Luva Térmica Para Forno Par De Luvas Termicas Cozinha Pegador Térmico Protetora Silicone Churrasco",
-    "category": "Utensílios de Cozinha",
-    "description": "Item essencial e prático para o dia a dia da nossa nova cozinha.",
-    "url": "https://s.shopee.com.br/5fooBJEtQf",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfko-maygejis7atr69_cover",
     "highlight": false
   },
   {
@@ -260,30 +206,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "forma-gelo-01",
-    "title": "Conjunto de Formas de Gelo Redondas: 3 Formas, 1 Recipiente de e Colher. Formas de Gelo Aprimoradas, Molde de Gelo",
-    "category": "Formas de Gelo",
-    "description": "Forma prática para drinks refrescantes e momentos especiais com amigos.",
-    "url": "https://s.shopee.com.br/9V1WlDR9Oo",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824h9-mpoibmhmtpfyc4",
-    "highlight": false
-  },
-  {
     "id": "forma-gelo-02",
     "title": "14 formas de gelo, forma quadrada para gelo com tampa, forma de gelo de silicone com fundo macio, forma de gelo fácil",
     "category": "Formas de Gelo",
     "description": "Forma prática para drinks refrescantes e momentos especiais com amigos.",
     "url": "https://s.shopee.com.br/6q0laNIMWs",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-maa4z8o7cn1y2f",
-    "highlight": false
-  },
-  {
-    "id": "organizador-01",
-    "title": "Organizador Separador Porta Talheres Cozinha Organizadora de Gaveta Facas Colheres Garfos",
-    "category": "Organizadores",
-    "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
-    "url": "https://s.shopee.com.br/5AsXbMsIES",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-lw31pmm6suc265",
     "highlight": false
   },
   {
@@ -305,39 +233,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "organizador-04",
-    "title": "Organizador de gaveta de armário importado do Japão, cesta organizadora de plástico, caixa de armazenamento de talheres,",
-    "category": "Organizadores",
-    "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
-    "url": "https://s.shopee.com.br/6L4UzZhhNC",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-824i2-mpze1gvof5zg90",
-    "highlight": false
-  },
-  {
     "id": "organizador-05",
     "title": "Porta Talheres Bambu Organizador Separador 5 Divisórias Para Gaveta Divisor Madeira Bambu Cozinha",
     "category": "Organizadores",
     "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
     "url": "https://s.shopee.com.br/7fZsa4OLj1",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rd6o-lw8puhmcjdwr37",
-    "highlight": false
-  },
-  {
-    "id": "organizador-06",
-    "title": "Kit 5 Organizadores grande gaveta talheres geladeira maquiagem 976",
-    "category": "Organizadores",
-    "description": "Divisórias práticas para manter nossas gavetas e talheres sempre organizados.",
-    "url": "https://s.shopee.com.br/AUu3xJ3t2t",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-820m3-mqxgzjl9gs92f7",
-    "highlight": false
-  },
-  {
-    "id": "porta-papel-01",
-    "title": "Kit Porta Papel Toalha + Porta Guardanapos – Praticidade e Elegância para sua Cozinha!",
-    "category": "Mesa & Servir",
-    "description": "Peça charmosa para compor a mesa posta e receber quem amamos com carinho.",
-    "url": "https://s.shopee.com.br/3qNA14t3RB",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823qg-mpbejw20464r56",
     "highlight": false
   },
   {
@@ -348,24 +249,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/qjYRgWeUL",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820ld-mp9thypn8ni866",
     "highlight": false
-  },
-  {
-    "id": "porta-guardanapo-02",
-    "title": "Porta Guardanapos Querida Black Porta Guardanapo Preto Black Arthi-2442",
-    "category": "Mesa & Servir",
-    "description": "Peça charmosa para compor a mesa posta e receber quem amamos com carinho.",
-    "url": "https://s.shopee.com.br/80CiyuqYPF",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ld-mnblo455emtd51",
-    "highlight": false
-  },
-  {
-    "id": "porta-guardanapo-03",
-    "title": "Porta Guardanapo Aurora Suporte Guardanapos Bambu Metal Dourado Preto Mesa Posta Cozinha Bancada Organizador",
-    "category": "Mesa & Servir",
-    "description": "Peça charmosa para compor a mesa posta e receber quem amamos com carinho.",
-    "url": "https://shopee.com.br/Porta-Guardanapo-Aurora-Suporte-Guardanapos-Bambu-Metal-Dourado-Preto-Mesa-Posta-Cozinha-Bancada-Organizador-i.430136280.58216443765?extraParams=%7B%22display_model_id%22%3A238812088386%2C%22model_selection_logic%22%3A3%7D",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lp-ms1m2czd4g7816",
-    "highlight": true
   },
   {
     "id": "copos-01",
@@ -422,15 +305,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "copos-09",
-    "title": "Kit Jogo Canelado Jarra Borossilicato Copo Taça Sobremesa Suco Água Drinks Conjunto Jogo de Mesa",
-    "category": "Copos, Taças & Xícaras",
-    "description": "Lindo jogo para servir bebidas com estilo e elegância às nossas visitas.",
-    "url": "https://s.shopee.com.br/60Rec19VX1",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-meiodmna0ikj3d",
-    "highlight": false
-  },
-  {
     "id": "tacas-01",
     "title": "Taça Champanhe de Cristal Fio de Ouro 300ml Lyor 1 Taça de Champagne Taça Dourada Taça Festa Taça Brinde Taça Cristal",
     "category": "Copos, Taças & Xícaras",
@@ -447,15 +321,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/1BMOrFu11p",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820l9-mqlxtvd094ow56",
     "highlight": true
-  },
-  {
-    "id": "tacas-03",
-    "title": "Taça de champanhe com borda dourada e detalhes de diamante, estilo europeu, de luxo leve, taça de coquetel, taça de vidr",
-    "category": "Copos, Taças & Xícaras",
-    "description": "Para brindar aos momentos inesquecíveis e celebrar a vida a dois.",
-    "url": "https://s.shopee.com.br/AUu3yYCArS",
-    "image": "https://down-br.img.susercontent.com/file/sg-11110106-6vcdl-msfdbqsyeio05b_cover",
-    "highlight": false
   },
   {
     "id": "tacas-04",
@@ -530,30 +395,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": true
   },
   {
-    "id": "jarra-01",
-    "title": "Jarra De Vidro 2.000 ML - Transparente - Jarra De Vidro Com Alça, Jarra Para Suco",
-    "category": "Mesa & Servir",
-    "description": "Jarra elegante e espaçosa para servir sucos frescos, água aromatizada e chás gelados.",
-    "url": "https://s.shopee.com.br/5VVPJKy4l9",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-820l7-mqyt2i86g5538b",
-    "highlight": true
-  },
-  {
     "id": "jarra-02",
     "title": "Jarra De Vidro 1,5 Litros Jarra Com Tampa Garrafa De Vidro Geladeira Suco Água Jarra Vidro 1500 ML",
     "category": "Mesa & Servir",
     "description": "Design minimalista e resistente a altas temperaturas, perfeita para bebidas quentes ou frias.",
     "url": "https://s.shopee.com.br/4fwIJqQhW8",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820ls-mnvkrfk9w3r523",
-    "highlight": false
-  },
-  {
-    "id": "jarra-03",
-    "title": "Jarra Diamante de Vidro Transparente 1 Litro Original Jarra de Agua Jarra Diamond",
-    "category": "Mesa & Servir",
-    "description": "Textura canelada clássica que traz sofisticação e charme à mesa posta da família.",
-    "url": "https://s.shopee.com.br/1BMQ9QZQbW",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m6ssn5vgnxaf49",
     "highlight": false
   },
   {
@@ -611,15 +458,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": true
   },
   {
-    "id": "saladeira-02",
-    "title": "Tigela De Sobremesa Vidro Resistente Marinex Saladeira De Vidro Saladeira 1 ,6 Litros Saladeira Vidro",
-    "category": "Mesa & Servir",
-    "description": "Design sofisticado com acabamento requintado que valoriza qualquer mesa de jantar.",
-    "url": "https://s.shopee.com.br/7Kx3UuqFEt",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lx-mr0ebm90e806aa",
-    "highlight": false
-  },
-  {
     "id": "saladeira-04",
     "title": "Conjunto Travessa Saladeira Baixelas Para Servir Ryo Maresia Areia Oxford Porcelanas",
     "category": "Mesa & Servir",
@@ -635,15 +473,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "description": "Vidro de altíssima durabilidade e brilho para o almoço do dia a dia.",
     "url": "https://s.shopee.com.br/112zxJzo5D",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mjpvv3zz6iv6e4",
-    "highlight": false
-  },
-  {
-    "id": "saladeira-06",
-    "title": "Saladeira De Vidro C/ Suporte De Madeira Bowl Sobremesa Tigela Mesa Cozinha 19cm",
-    "category": "Mesa & Servir",
-    "description": "Super prática para armazenar na geladeira e levar à mesa sem complicações.",
-    "url": "https://s.shopee.com.br/20vX9B4bNV",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-825zr-mki2olycejut4e",
     "highlight": false
   },
   {
@@ -710,30 +539,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "petisqueira-01",
-    "title": "petisqueira/petisqueira com divisória/bandeja petisco/porta petisco/petisqueira redonda",
-    "category": "Mesa & Servir",
-    "description": "Perfeita para servir castanhas, queijos, azeitonas e molhos saborosos aos amigos.",
-    "url": "https://s.shopee.com.br/3qNBKjb2Tg",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820me-mnugy9n9svluff",
-    "highlight": true
-  },
-  {
     "id": "petisqueira-02",
     "title": "Petisqueira de Madeira Kit Petisqueira para Molhos com Trio de Ramequin de Porcelana Branca",
     "category": "Mesa & Servir",
     "description": "Base giratória que facilita o acesso aos petiscos por todos ao redor da mesa.",
     "url": "https://s.shopee.com.br/3VkKw8tQx3",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820m5-mslr804mlwxy09",
-    "highlight": false
-  },
-  {
-    "id": "petisqueira-03",
-    "title": "Tábuas Petisqueiras Para Natal Mesa Posta Madeira Pinus Premium Petisqueira Natalina",
-    "category": "Mesa & Servir",
-    "description": "Cores suaves e potinhos independentes para montar aperitivos com muita elegância.",
-    "url": "https://s.shopee.com.br/1BMQ9rg7V9",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mgclwjqu61og21",
     "highlight": false
   },
   {
@@ -744,15 +555,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/4B01jOuUJl",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-mdp2gna6ogjdd9",
     "highlight": false
-  },
-  {
-    "id": "petisqueira-05",
-    "title": "Petisqueira Melamina #petisqueira #cozinha #utensiliosdomestico",
-    "category": "Mesa & Servir",
-    "description": "Design lúdico e delicado que encanta qualquer visita em nosso novo lar.",
-    "url": "https://s.shopee.com.br/9V1Y5DDv1z",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262s-mk8icasgln2c8d",
-    "highlight": true
   },
   {
     "id": "petisqueira-06",
@@ -791,39 +593,12 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "tabua-corte-04",
-    "title": "Tábua para Corte de Madeira Tábua de Cozinha com Cabo para Pendurar Tábua para Carnes, Frios, Queijos e Churrasco",
-    "category": "Utensílios de Cozinha",
-    "description": "Espessura robusta e acabamento acetinado para durar a vida inteira na cozinha.",
-    "url": "https://s.shopee.com.br/1BMQABPAp5",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820ly-mozorcnpmk1s97",
-    "highlight": false
-  },
-  {
-    "id": "tabua-frios-01",
-    "title": "Tabua Para Frios Petiscos Tabua Gurme Tábua Pão de Metro Expositor",
-    "category": "Mesa & Servir",
-    "description": "Combinação refinada de pedra ardósia e madeira para montar tábuas de queijos de cinema.",
-    "url": "https://s.shopee.com.br/30o4LXivYa",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lh-mnepiiadhzpg17",
-    "highlight": true
-  },
-  {
     "id": "tabua-frios-02",
     "title": "Tábua De Frios Giratória Grande Tabua De Bambu Redonda Tábuas Para Cozinha Petisqueira Giratoria",
     "category": "Mesa & Servir",
     "description": "Praticidade total com faquinhas especiais guardadas dentro da própria tábua.",
     "url": "https://s.shopee.com.br/4fwIKd2iKQ",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-7rdxq-lzjd4v63ljnb10",
-    "highlight": true
-  },
-  {
-    "id": "travessa-01",
-    "title": "Jogo Travessas: 2 Travessas Ovais Rasas 33cm + 2 Travessas com Ilustração 37,3cm",
-    "category": "Mesa & Servir",
-    "description": "Direto do forno para a mesa: perfeita para lasanhas, assados e pratos especiais.",
-    "url": "https://s.shopee.com.br/6fhMiLpQ6F",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8260g-mlhp1sdna4g3de",
     "highlight": true
   },
   {
@@ -854,24 +629,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "travessa-06",
-    "title": "Travessa Natal Oval Sagrada Família Melamina Bege 35x25cm Bandeja Travessa Petisqueira Mesa Posta",
-    "category": "Mesa & Servir",
-    "description": "Acabamento moderno e minimalista que combina com a nossa paleta de decoração.",
-    "url": "https://s.shopee.com.br/LnJAosxzT",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821df-mh6ox5hs44jzd6",
-    "highlight": true
-  },
-  {
-    "id": "assadeira-01",
-    "title": "Kit Com 2 Formas Pao Assadeiras Teflon Não Gruda Otima Qualidade Aço Carbono Assadeira Para Pao",
-    "category": "Utensílios de Cozinha",
-    "description": "Tamanhos pequeno, médio e grande para todas as receitas de forno doces e salgadas.",
-    "url": "https://s.shopee.com.br/7AddJR9jo0",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820li-mq0qkae2qx37e0",
-    "highlight": true
-  },
-  {
     "id": "assadeira-02",
     "title": "Kit Com 2 Formas Assadeira Para Bolo Pudim Com Furo No Meio Teflon Antiaderente Assadeira Com Furo No Meio Bolos",
     "category": "Utensílios de Cozinha",
@@ -899,33 +656,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "assadeira-05",
-    "title": "Forma Rebaixada de Alumínio - Forma de bolo Alumínio - Forma Piscininha - Assadeira de Alumínio - Assadeira Bolo",
-    "category": "Utensílios de Cozinha",
-    "description": "Para aquele cheirinho irresistível de bolo e pão caseiro saindo do forno quentinho.",
-    "url": "https://s.shopee.com.br/1LfqMogijg",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820l7-mqjc58si9udca6",
-    "highlight": false
-  },
-  {
-    "id": "escorredor-macarrao-01",
-    "title": "Kit 3 Peças Escorredor de Arroz + Escorredor de Macarrão Massas + Escorredor Telado Inox Cozinha",
-    "category": "Utensílios de Cozinha",
-    "description": "Furos uniformes e material resistente que dura a vida toda na preparação de massas.",
-    "url": "https://s.shopee.com.br/1VzGZAW4i7",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-820lg-mnmx4njmj30od0",
-    "highlight": true
-  },
-  {
-    "id": "escorredor-macarrao-02",
-    "title": "Escorredor De Pia Inox Lava Frutas Alça Retrátil Alimentos Fruteira Escorredor De Macarrão",
-    "category": "Utensílios de Cozinha",
-    "description": "Super compacto: dobra-se facilmente ocupando o mínimo de espaço nas gavetas.",
-    "url": "https://s.shopee.com.br/4B01k7pVcV",
-    "image": "https://down-br.img.susercontent.com/file/sg-11110106-6vasw-ms1t6ipfi77k41_cover",
-    "highlight": false
-  },
-  {
     "id": "potes-geladeira-01",
     "title": "Organizador com 3 Potes Herméticos De Geladeira Para Frutas Próprios Para Geladeira e Micro-ondas",
     "category": "Potes & Mantimentos",
@@ -935,15 +665,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": true
   },
   {
-    "id": "potes-geladeira-02",
-    "title": "Potes Herméticos para Geladeira 460ml/950ml - Porta Mantimento, Geladeira, Alho, Cebola - Kits e individuais",
-    "category": "Potes & Mantimentos",
-    "description": "Travas nos quatro lados e anel de silicone para vedação completa sem vazamentos.",
-    "url": "https://s.shopee.com.br/4qFiXOuczO",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-meaeas1sq0aqd2",
-    "highlight": false
-  },
-  {
     "id": "potes-geladeira-03",
     "title": "Pote Slim 1.780ml Multiuso Hermético Fresh Pote Para Geladeira Alimentos Frescos",
     "category": "Potes & Mantimentos",
@@ -951,15 +672,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/7ptK6wV8Ch",
     "image": "https://down-br.img.susercontent.com/file/br-11134258-7r98o-lxsovyseln7jc5",
     "highlight": false
-  },
-  {
-    "id": "potes-geladeira-04",
-    "title": "POTE ORGANIZADOR PARA GELADEIRA COM 6 POTES DIVISÓRIAS",
-    "category": "Potes & Mantimentos",
-    "description": "Vidro borossilicato puro que vai ao freezer, micro-ondas e lava-louças com segurança.",
-    "url": "https://s.shopee.com.br/112zyPU0X1",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-821es-mh8ae7br5pmw2e",
-    "highlight": true
   },
   {
     "id": "potes-geladeira-05",
@@ -987,42 +699,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/7Kx3WBT44o",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-820lc-mo4nwdn4z1tud9",
     "highlight": false
-  },
-  {
-    "id": "jogo-americano-01",
-    "title": "Jogo Americano Redondo Cozinha Jantar Kit 4 ou 6 Peças Jogo Americano Redondo Cozinha Jantar Material do PVC Fácil de li",
-    "category": "Mesa & Servir",
-    "description": "Tecido nobre que repele líquidos e sujeiras, unindo sofisticação e facilidade de limpeza.",
-    "url": "https://s.shopee.com.br/9zxoh9Q5zm",
-    "image": "https://down-br.img.susercontent.com/file/br-11110105-6kfkr-m77omshh5waaa2_cover",
-    "highlight": true
-  },
-  {
-    "id": "jogo-americano-02",
-    "title": "Jogo Americano Mesa Posta 12 Pçs 6 Lugares Mesa Posta Sousplat Jogo Americano Limão Siciliano Bordado",
-    "category": "Mesa & Servir",
-    "description": "Textura trançada charmosa que combina com pratos brancos e louças florais.",
-    "url": "https://s.shopee.com.br/5q8FjWJ5CH",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820li-mmt83x4yimf41e",
-    "highlight": false
-  },
-  {
-    "id": "jogo-americano-04",
-    "title": "Kit jogo americano 8, 12, 16, 20 e 24 Peças - Sousplat e Guardanapo - Mesa Posta - Decoração Branco com Folhas.",
-    "category": "Mesa & Servir",
-    "description": "Artesanato autêntico para trazer o calor e acolhimento da natureza para a nossa casa.",
-    "url": "https://s.shopee.com.br/8AWAVr93Yc",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-23030-1q0zbscbziov57",
-    "highlight": false
-  },
-  {
-    "id": "sousplat-01",
-    "title": "Sousplat cristal Diamante furtacor 32x3cm L Hermitage",
-    "category": "Mesa & Servir",
-    "description": "Base essencial para proteger a toalha e estruturar pratos com imponência e requinte.",
-    "url": "https://s.shopee.com.br/1ASmsdL40",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8259v-mt01ke8nal1cb5",
-    "highlight": true
   },
   {
     "id": "manteigueira-01",
@@ -1061,33 +737,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "manteigueira-05",
-    "title": "Manteigueira 14cm WOLFF Pearl Vidro Cristal ambar / Pérolas / Mesa / Cozinha / Manteiga Manteigueira",
-    "category": "Mesa & Servir",
-    "description": "Higiênica, inquebrável e com brilho duradouro para as refeições em família.",
-    "url": "https://s.shopee.com.br/6Al68NpYdn",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-820lq-mqgp6etyx9fn6d",
-    "highlight": false
-  },
-  {
-    "id": "molheira-01",
-    "title": "Molheira de Cristal Pearl Âmbar 9x5x6cm 40ml Molheira de Cristal Pearl Âmbar 9x5x6cm 40ml",
-    "category": "Mesa & Servir",
-    "description": "Ideal para servir molhos de salada, caldas de sobremesa e azeite sem respingos.",
-    "url": "https://s.shopee.com.br/LnJBiwwx9",
-    "image": "https://down-br.img.susercontent.com/file/br-11134201-820m7-mtcm8ji9vsoxde",
-    "highlight": true
-  },
-  {
-    "id": "molheira-02",
-    "title": "Kit 5 e 25 Ramekin Plástico 110 ml Canelado Plástico Melamina Molho Buffet Molheira petisco festa",
-    "category": "Mesa & Servir",
-    "description": "Tamanho perfeito para dispor maioneses caseiras, shoyu e vinagretes à mesa.",
-    "url": "https://s.shopee.com.br/9AOhi0SRRp",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mfy8i4flsq2s1e",
-    "highlight": false
-  },
-  {
     "id": "bowl-01",
     "title": "Jogo Bowl para Sobremesa de Vidro 7 peças – 1 Bowl Grande 1,4L (21cm) + 6 Bowls 245ml | Elegância e Versatilidade",
     "category": "Mesa & Servir",
@@ -1095,15 +744,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/8plrJQbdIx",
     "image": "https://down-br.img.susercontent.com/file/br-11134207-81ztc-mkd51nqoj2mb9e",
     "highlight": true
-  },
-  {
-    "id": "bowl-02",
-    "title": "Kit Bowl Cerâmica Premium - Cumbuca 400ml - Bowl Jogo de Sobremesa Tigela - Bowl",
-    "category": "Mesa & Servir",
-    "description": "Brilho encantador que valoriza sobremesas, mousses e saladas de frutas.",
-    "url": "https://s.shopee.com.br/9peOVHOlEE",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-mbi8n7mrvz6q82",
-    "highlight": false
   },
   {
     "id": "bowl-03",
@@ -1230,15 +870,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/70KD8V6pox",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-825ad-mr24vmb56ku827",
     "highlight": true
-  },
-  {
-    "id": "jogo-pratos-05",
-    "title": "Jogo 2 Pratos Rasos 2 Pratos Fundos 2 Pratos Lanche Donna Folk Oxford® Cerâmica",
-    "category": "Mesa & Servir",
-    "description": "Design contemporâneo com toque tátil aconchegante para as refeições diárias.",
-    "url": "https://s.shopee.com.br/8V90vIe3Fk",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262g-mkntt29eqt4x88",
-    "highlight": false
   },
   {
     "id": "jogo-pratos-06",
@@ -1376,33 +1007,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "highlight": false
   },
   {
-    "id": "limpeza-07",
-    "title": "Kit Escovas de Limpeza Dupla e Oval de Bambu Ecológico 3 Peças Com Rodo Rodinho de Pia Ergonômico",
-    "category": "Lavanderia & Limpeza",
-    "description": "Varrição prática sem precisar se curvar, com cerdas macias que recolhem tudo.",
-    "url": "https://s.shopee.com.br/1qc706uIkW",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-823om-mogud2h1qvpl4d",
-    "highlight": false
-  },
-  {
-    "id": "limpeza-08",
-    "title": "Kit 2 Escovas de Limpeza + Mini Vassoura com Pá Preta Cabo de Bambu - Kit completo de limpeza",
-    "category": "Lavanderia & Limpeza",
-    "description": "Protege rendas, malhas finas e roupas especiais contra atrito na máquina de lavar.",
-    "url": "https://s.shopee.com.br/4fwINNZ6CC",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-81z1k-me0ezvbga51daa",
-    "highlight": false
-  },
-  {
-    "id": "limpeza-09",
-    "title": "Kit Escova de Limpeza Multiuso com Cabo de Bambu E Rodo de Pia Dobrável com Cabo de Bambu Off-White Oikos",
-    "category": "Lavanderia & Limpeza",
-    "description": "Fixação firme que mantém a lavanderia sempre livre, organizada e desimpedida.",
-    "url": "https://s.shopee.com.br/8plrL2sVGL",
-    "image": "https://down-br.img.susercontent.com/file/sg-11134201-8262h-mlflsm5rg2ki33",
-    "highlight": true
-  },
-  {
     "id": "cafe-cha-01",
     "title": "Chaleira Bule De Vidro Com Infusor de Chá Inox 450ml",
     "category": "Mesa & Servir",
@@ -1419,15 +1023,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/5AsYyRY65j",
     "image": "https://down-br.img.susercontent.com/file/sg-11134201-23020-izcu3307pzmv21",
     "highlight": false
-  },
-  {
-    "id": "cafe-cha-04",
-    "title": "Jogo Conjunto Filtro Coador de Café Com Jarra de Vidro 500ml (Cafeteira Francesa + Coador Vidro + Coador permanente 102)",
-    "category": "Mesa & Servir",
-    "description": "Para aquele ritual clássico e afetuoso de passar o cafezinho fresco da manhã.",
-    "url": "https://s.shopee.com.br/8V90wc2OHJ",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7r98o-m15phw899tgz32",
-    "highlight": true
   },
   {
     "id": "sanduicheira-01",
@@ -1491,24 +1086,6 @@ export const GIFTS_DATA: GiftItem[] = [
     "url": "https://s.shopee.com.br/4LJRzKHpWS",
     "image": "https://down-br.img.susercontent.com/file/06f1c67e4a26507cc467c54ae240210a",
     "highlight": false
-  },
-  {
-    "id": "tapete-05",
-    "title": "Tapete Tapete Capacho Porta de Entrada Decorativo Tapete Quarto Tapete Porta de Entrada - Trouxe Cerveja - Mega Oferta",
-    "category": "Decoração & Casa",
-    "description": "Padronagem elegante que moderniza os ambientes e pode ser lavado facilmente.",
-    "url": "https://s.shopee.com.br/8plrLdqkyL",
-    "image": "https://down-br.img.susercontent.com/file/f3089ba0053f0e494a916043e2b3797f",
-    "highlight": false
-  },
-  {
-    "id": "tapete-06",
-    "title": "Tapete Tapete Capacho Porta de Entrada Decorativo Tapete Quarto Tapete Porta de Entrada - Destino- Mega Oferta",
-    "category": "Decoração & Casa",
-    "description": "Charme artesanal perfeito para corredores, beira de cama ou varanda.",
-    "url": "https://s.shopee.com.br/50Z8mbw98B",
-    "image": "https://down-br.img.susercontent.com/file/br-11134207-7qukw-ljvgusriwiar31",
-    "highlight": true
   },
   {
     "id": "manta-01",
